@@ -10,7 +10,7 @@ function tag(z) {
 }
 if (cls('for-tag-list') != null) {
     if (id('tag-list-preview') != null) {
-        id('tag-list-preview').innerHTML = '<div class="custom-tag-list"><div class="custom-tag-list-ctrl"><img id="custom-tag-list-right" class="disable button" src="./assest/right.png"><img id="custom-tag-list-left" class="button" src="./assest/left.png"><img id="custom-tag-list-mini" class="button" onclick=custom_tag_list_mini() src="./assest/mini.png"><img id="custom-tag-list-close" class="button" src="./assest/close.png"></div><div class="custom-tag-list-content"></div><div class="null" style="visibility: hidden;"><div class="custom-tag-list-backup-right"></div><div class="custom-tag-list-backup-left"></div><div class="custom-tag-list-backup-height"></div><div class="custom-tag-list-backup-width"></div></div></div>';
+        id('tag-list-preview').innerHTML = '<div class="custom-tag-list"><div class="custom-tag-list-ctrl"><img id="custom-tag-list-right" class="disable button" src="https://i.ibb.co/n3Nh2Jm/right.png"><img id="custom-tag-list-left" class="button" src="https://i.ibb.co/RgTqMnt/left.png"><img id="custom-tag-list-mini" class="button" onclick=custom_tag_list_mini() src="https://i.ibb.co/kmFgFjZ/mini.png"><img id="custom-tag-list-close" class="button" src="https://i.ibb.co/8bD7RWP/close.png"></div><div class="custom-tag-list-content"></div><div class="null" style="visibility: hidden;"><div class="custom-tag-list-backup-right"></div><div class="custom-tag-list-backup-left"></div><div class="custom-tag-list-backup-height"></div><div class="custom-tag-list-backup-width"></div></div></div>';
     }
     if (cls('custom-tag-list-content') != null) {
         cls('custom-tag-list-content').innerHTML = cls('for-tag-list').innerHTML;
@@ -84,7 +84,7 @@ if (cls('custom-tag-list') != null) {
 };
 function custom_tag_list_mini() {
     if (id('custom-tag-list-mini') != null) {
-        id('custom-tag-list-mini').src = "./assest/maxi.png";
+        id('custom-tag-list-mini').src = "https://i.ibb.co/PMWz11d/maxi.png";
         id('custom-tag-list-mini').setAttribute('onclick', 'custom_tag_list_maxi()');
         id('custom-tag-list-mini').id = "custom-tag-list-maxi";
     }
@@ -115,7 +115,7 @@ function custom_tag_list_mini() {
 }
 function custom_tag_list_maxi() {
     if (id('custom-tag-list-maxi') != null) {
-        id('custom-tag-list-maxi').src = "./assest/mini.png";
+        id('custom-tag-list-maxi').src = "https://i.ibb.co/kmFgFjZ/mini.png";
         id('custom-tag-list-maxi').setAttribute('onclick', 'custom_tag_list_mini()');
         id('custom-tag-list-maxi').id = "custom-tag-list-mini";
     }
