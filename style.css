@@ -1,0 +1,53 @@
+/* styles... */
+body{
+    background: rgb(0, 255, 13);
+    overflow-y: scroll;
+}
+.custom-tag-list{
+    position: fixed;
+    display: block;
+    margin: 5px;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.247);
+    border: 3px groove red;
+    width: fit-content;
+    min-width: 162px;
+    height: -webkit-fill-available;
+    min-height: 32px;
+    resize: both;
+    visibility: hidden;
+}
+.custom-tag-list .listitem{
+    display: block;
+    text-align: center;
+    background: black;
+    color: red;
+    padding: 0px 5px 5px 5px;
+    margin: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.custom-tag-list .listitem:focus{
+    outline: 2px ridge #00ff72;
+}
+.custom-tag-list-ctrl{
+    display: flex;
+    padding: 1px;
+    background: black;
+    justify-content: flex-end;
+    align-items: center;
+}
+.custom-tag-list-ctrl img{
+    width: 25px;
+}
+.custom-tag-list-content{
+    display: flex;
+    flex-direction: column;
+    background: white;
+    overflow-y: scroll;
+}
