@@ -77,8 +77,8 @@ if (cls('custom-tag-list') != null) {
         })
     }
     if (id('fetch-tag-list') != null) {
-        id('fetch-tag-list').addEventListener('click', () => {
         id('fetch-tag-list').setAttribute("onclick", "cls('custom-tag-list').style.visibility = 'visible'");
+        id('fetch-tag-list').addEventListener('click', () => {
             cls('custom-tag-list').style.visibility = 'visible';
         })
     };
