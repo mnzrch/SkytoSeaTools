@@ -17,7 +17,7 @@ if (id('custom-footer-ad') != null) {
 if (id('custom-footer-ctrl') != null) {
     id('custom-footer-ctrl').addEventListener('click', () => {
         if (id('custom-footer-ctrl').innerHTML == '↓') {
-                id('custom-footer-ad').style.bottom=100+'px';
+                id('custom-footer-ad').style.bottom=-100+'px';
 //                 id('custom-footer-ad').style.bottom= -id('custom-footer-ad').clientHeight;
             setTimeout(() => {
                 id('custom-footer-ctrl').innerHTML = '↑';
