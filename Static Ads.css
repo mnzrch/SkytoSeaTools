@@ -1,234 +1,45 @@
-/* Stylesheet by LetsLearnLights */
-.static-ad-op{
-    opacity: 100%;
-    transition: .8s;
+/* Styles */
+body{
+    overflow: scroll;
 }
-.static-ad-op:hover{
-    opacity: 100%;
-}
-/* header */
-.header-static-adframe{
-    position: fixed;
+#custom-footer-ad{
     background: white;
-    width: 80%;
-    height: 200px;
-    border: 2px solid black;
-    top: 10%;
-    left: 10%;
-    border-radius: 10px;
-    transition: .5s;
-    box-shadow: -2px 2px 7px #000000e3;
-}
-.header-static-actbtn{
-    position: absolute;
-    bottom: -2px;
-    font-weight: bold;
-    font-size: 19px;
-    width: 20px;
-    height: 20px;
-    line-height: 24px;
-    letter-spacing: -16px;
-    background: white;
-    border-radius: 0px 8px 0px 6px;
-    border: 2px solid black;
-    border-bottom: none;
-    border-left: none;
-    margin: 0px 0px 7px 5px;
-    cursor: pointer;
-    box-shadow: -3px 3px 4px #00000094;
-    text-shadow: 0px -3px 1px red;
-}
-.header-static-adcontent{
-    visibility: initial;
-    background: grey;
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
-    overflow: hidden;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-    transition: .5s;
-}
-/* footer */
-.footer-static-adframe{
-    position: fixed;
-    background: white;
-    height: 200px;
-    border: 2px solid black;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-bottom: none;
-    border-right: none;
-    border-left: none;
-    border-radius: 0px 10px 0px 0px;
-    transition: 1s;
-    box-shadow: 0px -1px 7px #000000e3;
-}
-.footer-static-actbtn{
-    position: absolute;
-    height: 20px;
-    top: -20px;
-    font-weight: bold;
-    font-size: 19px;
-    width: 50px;
-    background: white;
-    border-radius: 8px 8px 0px 0px;
-    border: 1px solid black;
-    border-bottom: none;
-    cursor: pointer;
-    box-shadow: 2px -2px 3px #00000094;
-    text-shadow: 0px -3px 1px red;
-}
-.footer-static-adcontent{
-    visibility: initial;
-    background: grey;
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
-    overflow: hidden;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 0 5px 0 0;
+    border-radius: 0px 5px 0px 0px;
+    box-shadow: 0px 0px 5px black;
     transition: 1s;
 }
-/* left */
-.left-static-adframe{
+#custom-footer-adhere{
+    background-image: url(./loadingicon.ani);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black;
+}
+#custom-footer-ctrl{
+    position: fixed;
+    margin: -20px 0px 0px 0px;
+    padding: 1px 0px 5px 0px;
+    font-weight: bold;
+    color: black;
+    background: white;
+    width: 40px;
+    text-align: center;
+    -webkit-text-stroke: thick;
+    cursor: not-allowed;
+    border-radius: 5px 5px 0px 0px;
+}
+#custom-footer-ctrl-shadow{
     position: fixed;
     background: white;
-    width: 200px;
-    border: 2px solid black;
-    left: 0;
-    top: 10%;
-    bottom: 10%;
-    border-left: none;
-    border-radius: 0px 0px 10px 0px;
-    transition: 1s;
-    box-shadow: 2px 2px 7px #000000e3;
+    width: 40px;
+    height: 19px;
+    margin: -18px 0px 0px -1px;
+    box-shadow: 2px -2px 5px black;
+    border-radius: 5px 5px 0px 0px;
 }
-.left-static-actbtn{
-    position: absolute;
-    top: -2px;
-    left: 100%;
-    font-weight: bold;
-    font-size: 19px;
-    width: 20px;
-    height: 50px;
-    line-height: 52px;
-    letter-spacing: -16px;
-    background: white;
-    border-radius: 0px 8px 8px 0px;
-    border: 2px solid black;
-    border-left: none;
-    cursor: pointer;
-    box-shadow: 3px 3px 4px #00000094;
-    text-shadow: 0px -3px 1px red;
+@media (width: 400px) {
+    #custom-footer-ad{
+        overflow-y: scroll;
+    }
+    
 }
-.left-static-adcontent{
-    visibility: initial;
-    background: grey;
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
-    overflow: hidden;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-    transition: .5s;
-}
-/* right */
-.right-static-adframe{
-    position: fixed;
-    background: white;
-    width: 200px;
-    border: 2px solid black;
-    right: 0;
-    top: 10%;
-    bottom: 10%;
-    border-right: none;
-    border-radius: 10px 0px 0px 0px;
-    transition: 1s;
-    box-shadow: -2px 2px 7px #000000e3;
-}
-.right-static-actbtn{
-    position: absolute;
-    bottom: -2px;
-    right: 100%;
-    font-weight: bold;
-    font-size: 19px;
-    width: 20px;
-    height: 50px;
-    line-height: 52px;
-    letter-spacing: -16px;
-    background: white;
-    border-radius: 8px 0px 0px 8px;
-    border: 2px solid black;
-    border-right: none;
-    cursor: pointer;
-    box-shadow: -3px 3px 4px #00000094;
-    text-shadow: 0px -3px 1px red;
-}
-.right-static-adcontent{
-    visibility: initial;
-    background: grey;
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
-    overflow: hidden;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
-    transition: .5s;
-}
-/* centerc */
-.centerc-static-adframe {
-    position: fixed;
-    margin: auto;
-    background: white;
-    width: 800px;
-    height: 800px;
-    right: 1%;
-    bottom: 1%;
-    border: 2px solid black;
-    border-radius: 50%;
-    transition: .5s;
-    box-shadow: -2px 2px 7px #000000e3;
-}
-.centerc-static-actbtn{
-    position: absolute;
-    width: 21px;
-    height: 21px;
-    font-size: 25px;
-    line-height: 21px;
-    background: white;
-    top: 0px;
-    left: 0px;
-    border: 1px solid black;
-    cursor: pointer;
-    box-shadow: 2px 2px 2px #00000094;
-}
-.centerc-static-adcontent{
-    position: relative;
-    visibility: initial;
-    background: grey;
-    width: -webkit-fill-available;
-    height: -webkit-fill-available;
-    overflow: hidden;
-    margin: 5px;
-    border-radius: 50%;
-    transition: .5s;
-    padding: 120px;
-}
-/* .centerc-res, .centerc-mov{
-    position: absolute;
-    padding: 1px;
-    max-height: 19px;
-    max-width: 19px;
-}
-.centerc-mov{
-    font-size: 19px;
-    font-weight: bold;
-    top: 20;
-    line-height: 6px;
-}
-.centerc-res{
-    font-size: 23px;
-    margin: -3px -1px;
-} */
