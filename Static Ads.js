@@ -17,16 +17,18 @@ if (id('custom-footer-ad') != null) {
 if (id('custom-footer-ctrl') != null) {
     id('custom-footer-ctrl').addEventListener('click', () => {
         if (id('custom-footer-ctrl').innerHTML == '↓') {
-            setTimeout(() => {
+//             setTimeout(() => {
+//                 id('custom-footer-ctrl').innerHTML = '↑';
+//             }, 500);
                 id('custom-footer-ctrl').innerHTML = '↑';
-            }, 500);
             if (id('custom-footer-ad') != null) {
                 id('custom-footer-ad').style.bottom=-id('custom-footer-ad').clientHeight;
             }
         } else if (id('custom-footer-ctrl').innerHTML == '↑') {
-            setTimeout(() => {
+//             setTimeout(() => {
+//                 id('custom-footer-ctrl').innerHTML = '↓';
+//             }, 500);
                 id('custom-footer-ctrl').innerHTML = '↓';
-            }, 500);
             if (id('custom-footer-ad') != null) {
                 id('custom-footer-ad').style.bottom=0;
             }
