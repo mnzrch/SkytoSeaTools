@@ -21,7 +21,7 @@ if (id('custom-footer-ctrl') != null) {
                 id('custom-footer-ctrl').innerHTML = '↑';
             }, 500);
             if (id('custom-footer-ad') != null) {
-                id('custom-footer-ad').style.bottom=-id('custom-footer-ad').clientHeight;
+                id('custom-footer-ad').style.bottom=-id('custom-footer-ad').clientHeight+'px';
             }
         } else if (id('custom-footer-ctrl').innerHTML == '↑') {
             setTimeout(() => {
