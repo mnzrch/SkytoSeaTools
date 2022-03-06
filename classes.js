@@ -4,7 +4,7 @@
 //  <div id="fix-overlay" wait="0"></div>
 // 
 //            footer ad
-//  <div id="fix-footer-ad-content" class="null">This is Your content</div>
+//  <div id="fix-footer-ad-content" class="null"><!-- This is Your content --></div>
 //  <div id="fix-footer-ad" wait="0"></div>
 // 
 function id(x) {
