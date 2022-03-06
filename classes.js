@@ -40,8 +40,8 @@ if (cls('btnv1') != null) {
 //            Overlay
 setTimeout(() => {
     if (id('fix-overlay') != null) {
-        id('fix-overlay').setAttribute('class', 'fix top-0 right-0 left-0 bottom-0 padding-10 bg-black index-995');
-        id('fix-overlay').innerHTML = id('fix-overlay').innerHTML + '<span id="fix-overlay-ctrl" class="margin-5 fix right-0 top-0 btnv1 index-1000">⨯</span>';
+        id('fix-overlay').setAttribute('class', 'fix top-0 right-0 left-0 bottom-0 padding-10 bg-black index-997');
+        id('fix-overlay').innerHTML = id('fix-overlay').innerHTML + '<span id="fix-overlay-ctrl" class="margin-5 fix right-0 top-0 btnv1">⨯</span>';
         let fixoverlayctrlt = id('fix-overlay').getAttribute('wait');
         fixoverlayctrl = setInterval(() => {
             fixoverlayctrlt -= 1;
