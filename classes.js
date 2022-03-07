@@ -38,6 +38,7 @@ if (cls('btnv1') != null) {
     });
 }
 //            Overlay
+setTimeout(() => {
     if (id('fix-overlay') != null) {
         id('fix-overlay').setAttribute('class', 'fix top-0 right-0 left-0 bottom-0 padding-10 bg-black index-997');
         id('fix-overlay').innerHTML = id('fix-overlay').innerHTML + '<span id="fix-overlay-ctrl" class="margin-5 fix right-0 top-0 btnv1">⨯</span>';
@@ -67,7 +68,9 @@ if (cls('btnv1') != null) {
             }, 1000);
         }
     }
+}, 1000);
 //            footer ad
+setTimeout(() => {
     if (id('fix-footer-ad') != null) {
         id('fix-footer-ad').innerHTML = '<div id="custom-footer-ad" class="w-inherit fix h-25pc maxh-250 minh-100 right-0 bottom-0 left-0 index-996"><span id="custom-footer-ctrl-shadow"></span><span id="custom-footer-ctrl">▽</span><div id="custom-footer-adhere" class="w-wfa h-wfa margin-5 of-hide bg-aliceblue">Adhere</div></div>';
         if (id('custom-footer-adhere') != null && id('fix-footer-ad-content') != null) {
@@ -116,3 +119,4 @@ if (cls('btnv1') != null) {
             }, 1000);
         }
     }
+}, 1000);
