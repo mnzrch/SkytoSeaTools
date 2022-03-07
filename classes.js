@@ -69,7 +69,7 @@ let fixoverlay = setInterval(() => {
             }, 1000);
         }
     }
-}, 10)
+}, 100)
 //            footer ad
 let fixfooterad = setInterval(() => {
     if (id('fix-footer-ad') != null) {
@@ -121,4 +121,4 @@ let fixfooterad = setInterval(() => {
             }, 1000);
         }
     }
-}, 10)
+}, 100)
