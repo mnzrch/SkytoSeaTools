@@ -11,7 +11,7 @@ online
 <!--
       fix footer ad...
 
-<div id="fix-footer-ad-content" class="null">This is Your content</div>
+<div id="fix-footer-ad-content" class="null"><!-- This is Your content --></div>
 <div id="fix-footer-ad" wait="0"></div>  
         
 
@@ -21,7 +21,8 @@ online
 <div id="fix-footer-ad" wait="0">This is Your content</div>  
         
         
-        
+     For ⚙ Tools
+<div id="webtool-place" class="null"></div>   
         
         
         

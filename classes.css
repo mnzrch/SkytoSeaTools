@@ -30,6 +30,7 @@
     width: fit-content;
     padding: 1px 6px;
     cursor: pointer;
+    color: black;
     background: linear-gradient(#e2e2e2,white);
     border-radius: 3px;
     border: 1.5px #858585;
