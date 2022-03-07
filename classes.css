@@ -518,7 +518,7 @@
     transition: 1s;
 }
 #custom-footer-adhere{
-    background-image: url(./loadingicon.ani);
+    background-image: url(./assests/loadingicon.ani);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
