@@ -71,9 +71,9 @@ let fixoverlay = setInterval(() => {
     }
 }, 100)
 //            footer ad
-let fixfooterad = setInterval(() => {
+// let fixfooterad = setInterval(() => {
     if (id('fix-footer-ad') != null) {
-        clearInterval(fixfooterad);
+//         clearInterval(fixfooterad);
         id('fix-footer-ad').innerHTML = '<div id="custom-footer-ad" class="w-inherit fix h-25pc maxh-250 minh-100 right-0 bottom-0 left-0 index-996"><span id="custom-footer-ctrl-shadow"></span><span id="custom-footer-ctrl">▽</span><div id="custom-footer-adhere" class="w-wfa h-wfa margin-5 of-hide bg-aliceblue">Adhere</div></div>';
         if (id('custom-footer-adhere') != null && id('fix-footer-ad-content') != null) {
             id('custom-footer-adhere').innerHTML = id('fix-footer-ad-content').innerHTML.replace('<!--', '').replace('-->', '');
@@ -121,4 +121,4 @@ let fixfooterad = setInterval(() => {
             }, 1000);
         }
     }
-}, 100)
+// }, 100)
