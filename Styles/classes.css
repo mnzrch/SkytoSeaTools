@@ -1,0 +1,638 @@
+/* Add name of style in any HTML tag's attribute */
+.btnv1{
+    font-family: system;
+    width: fit-content;
+    padding: 1px 6px;
+    cursor: pointer;
+    color: black;
+    background: linear-gradient(#e2e2e2,white);
+    border-radius: 3px;
+    border: 1.5px #858585;
+    border-style: solid;
+    align-self: center;
+}
+.btnv1:active{
+    border-style: outset;
+    background: white;
+}
+.btnv1:hover{
+    box-shadow: 0px 0px 1px black;
+    background: linear-gradient(#e2e2e2,rgb(230, 230, 230));
+}
+.btnv1:focus-visible{
+    outline: -webkit-focus-ring-color auto 1px;
+}
+.btnv1:focus{
+    outline: -webkit-focus-ring-color auto 1px;
+}
+.disable{
+    cursor: not-allowed;
+    opacity: 50%;
+}
+.disable:hover{
+    background: darkred;
+}
+.null{
+    visibility: hidden;
+    overflow: hidden;
+    width: 0px !important;
+    height: 0px !important;
+}
+/* float... */
+.f-right{
+    float: right;
+}
+.f-left{
+    float: left;
+}
+.f-inline-end{
+    float: inline-end;
+}
+.f-inline-start{
+    float: inline-start;
+}
+.f-inherit{
+    float: inherit;
+}
+.f-inherit{
+    float: initial;
+}
+.f-unset{
+    float: unset;
+}
+/* visibility... */
+.hide{
+    visibility: hidden;
+}
+.hidden{
+    visibility: hidden;
+}
+.collapse{
+    visibility: collapse;
+}
+.visible{
+    visibility: visible;
+}
+.inherit{
+    visibility: inherit;
+}
+.initial{
+    visibility: initial;
+}
+.unset{
+    visibility: unset;
+}
+/* overlay... */
+#fix-overlay{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.452);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+#fix-overlay-ctrl{
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    cursor: not-allowed;
+}
+/* footer ad... */
+#custom-footer-ad{
+    background: white;
+    border-radius: 0px 5px 0px 0px;
+    box-shadow: 0px 0px 5px black;
+    transition: 1s;
+}
+#custom-footer-adhere{
+    background-image: url(https://mnzrch.github.io/SkytoSeeTools/assests/loadingicon.ani);
+    background-image: url(file:///C:/Users/Public/Desktop/SkytoSeeTool/assests/loadingicon.ani);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black;
+}
+#custom-footer-ctrl{
+    position: fixed;
+    margin: -20px 0px 0px 0px;
+    padding: 1px 0px 5px 0px;
+    font-weight: bold;
+    color: black;
+    background: white;
+    width: 40px;
+    text-align: center;
+    -webkit-text-stroke: thick;
+    cursor: not-allowed;
+    border-radius: 5px 5px 0px 0px;
+}
+#custom-footer-ctrl-shadow{
+    position: fixed;
+    background: white;
+    width: 40px;
+    height: 19px;
+    margin: -18px 0px 0px -1px;
+    box-shadow: 2px -2px 5px black;
+    border-radius: 5px 5px 0px 0px;
+}
+@media (max-width: 400px) {
+    #custom-footer-ad{
+        overflow-y: auto;
+    }
+}
+/* notic... */
+.not-icon{
+    margin-left: 10px;
+}
+.not-icon::before{
+    display: flex;
+    position: absolute;
+    content: '!';
+    font-weight: bold;
+    margin: -18px 0px 0px -10px;
+    color: red;
+    background: black;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px #1b00ff;
+    border: 1px solid white;
+    -webkit-text-stroke: thin;
+}
+/* overflow... */
+.of-hide{
+    overflow: hidden;
+}
+.of-hidden{
+    overflow: hidden;
+}
+/* display... */
+.dis-block{
+    display: block;
+}
+.dis-flex{
+    display: flex;
+}
+.dis-flexbox{
+    display: flexbox;
+}
+.dis-grid{
+    display: grid;
+}
+.dis-inline{
+    display: inline;
+}
+.dis-none{
+    display: none;
+}
+.dis-ruby{
+    display: ruby;
+}
+.dis-table{
+    display: table;
+}
+.dis-unset{
+    display: unset;
+}
+/* position... */
+.fix{
+    position: fixed;
+}
+.absolute{
+    position: absolute;
+}
+.relative{
+    position: relative;
+}
+.inherit{
+    position: inherit;
+}
+.initial{
+    position: initial;
+}
+.revert{
+    position: revert;
+}
+.unset{
+    position: unset;
+}
+/* justify-content... */
+.jc-baseline{
+    justify-content: baseline;
+}
+.jc-center{
+    justify-content: center;
+}
+.jc-end{
+    justify-content: end;
+}
+.jc-flexend{
+    justify-content: flex-end;
+}
+.jc-flexstart{
+    justify-content: flex-start;
+}
+.jc-inherit{
+    justify-content: inherit;
+}
+.jc-initial{
+    justify-content: initial;
+}
+.jc-left{
+    justify-content: left;
+}
+.jc-right{
+    justify-content: right;
+}
+.jc-revert{
+    justify-content: revert;
+}
+.jc-unset{
+    justify-content: unset;
+}
+.jc-spacearound{
+    justify-content: space-around;
+}
+.jc-spacebetween{
+    justify-content: space-between;
+}
+.jc-spaceevenly{
+    justify-content: space-evenly;
+}
+/* align-content... */
+.ac-baseline{
+    align-content: baseline;
+}
+.ac-center{
+    align-content: center;
+}
+.ac-end{
+    align-content: end;
+}
+.ac-start{
+    align-content: start;
+}
+.ac-flexend{
+    align-content: flex-end;
+}
+.ac-flexstart{
+    align-content: flex-start;
+}
+.ac-initial{
+    align-content: initial;
+}
+.ac-inherit{
+    align-content: inherit;
+}
+.ac-inherit{
+    align-content: inherit;
+}
+.ac-stretch{
+    align-content: stretch;
+}
+.ac-unset{
+    align-content: unset;
+}
+.ac-revert{
+    align-content: revert;
+}
+.ac-spacearound{
+    align-content: space-around;
+}
+.ac-spacebetween{
+    align-content: space-between;
+}
+.ac-spaceevenly{
+    align-content: space-evenly;
+}
+/* align-item... */
+.ai-baseline{
+    align-items: baseline;
+}
+.ai-center{
+    align-items: center;
+}
+.ai-end{
+    align-items: end;
+}
+.ai-start{
+    align-items: start;
+}
+.ai-flexend{
+    align-items: flex-end;
+}
+.ai-flexstart{
+    align-items: flex-start;
+}
+.ai-flexend{
+    align-items: self-end;
+}
+.ai-flexend{
+    align-items: self-start;
+}
+.ai-flexstart{
+    align-items: flex-start;
+}
+.ai-stretch{
+    align-items: stretch;
+}
+.ai-stretch{
+    align-items: normal;
+}
+/* text-align... */
+.t-center{
+    text-align: center;
+}
+.t-start{
+    text-align: start;
+}
+.t-end{
+    text-align: end;
+}
+.t-left{
+    text-align: left;
+}
+.t-right{
+    text-align: right;
+}
+.t-justify{
+    text-align: justify;
+}
+.t-inherit{
+    text-align: inherit;
+}
+.t-initial{
+    text-align: initial;
+}
+.t-unset{
+    text-align: unset;
+}
+/* fonts... */
+.f-serif{
+    font-family: serif;
+}
+.f-sans-serif{
+    font-family: sans-serif;
+}
+.f-Arial{
+    font-family: Arial;
+}
+.f-Helvetica{
+    font-family: Helvetica;
+}
+.f-apple-system{
+    font-family: -apple-system;
+}
+.f-BlinkMacSystemFont{
+    font-family: BlinkMacSystemFont;
+}
+.f-SegoeUI{
+    font-family: Segoe UI;
+}
+.f-Roboto{
+    font-family: Roboto;
+}
+.f-Oxygen{
+    font-family: Oxygen;
+}
+.f-Ubuntu{
+    font-family: Ubuntu;
+}
+.f-Cantarell{
+    font-family: Cantarell;
+}
+.f-OpenSans{
+    font-family: 'Open Sans';
+}
+.f-cursive{
+    font-family: cursive;
+}
+.f-fantasy{
+    font-family: fantasy;
+}
+.f-Georgia{
+    font-family: Georgia;
+}
+.f-Geneva{
+    font-family: Geneva;
+}
+.f-TimesNewRoman{
+    font-family: 'Times New Roman';
+}
+.f-Times{
+    font-family: Times;
+}
+.f-inherit{
+    font-family: inherit;
+}
+.f-initial{
+    font-family: initial;
+}
+.f-Impact{
+    font-family: Impact;
+}
+.f-Haettenschweiler{
+    font-family: Haettenschweiler;
+}
+.f-ArialNarrowBold{
+    font-family: 'Arial Narrow Bold';
+}
+.f-LucidaSans{
+    font-family: 'Lucida Sans';
+}
+.f-LucidaSansRegular{
+    font-family: 'Lucida Sans Regular';
+}
+.f-LucidaGrande{
+    font-family: 'Lucida Grande';
+}
+.f-LucidaSansUnicode{
+    font-family: 'Lucida Sans Unicode';
+}
+.f-Verdana{
+    font-family: Verdana;
+}
+.f-monospace{
+    font-family: monospace;
+}
+.f-TrebuchetMS{
+    font-family: 'Trebuchet MS';
+}
+.f-unset{
+    font-family: unset;
+}
+.f-Tahoma{
+    font-family: Tahoma;
+}
+/* fonts size... */
+.fs-large{
+    font-size: large;
+}
+.fs-larger{
+    font-size: larger;
+}
+.fs-xlarge{
+    font-size: x-large;
+}
+.fs-xlarge{
+    font-size: xx-large;
+}
+.fs-medium{
+    font-size: medium;
+}
+.fs-small{
+    font-size: small;
+}
+.fs-smaller{
+    font-size: smaller;
+}
+.fs-xsmall{
+    font-size: x-small;
+}
+.fs-xsmall{
+    font-size: xx-small;
+}
+/* color... */
+.aliceblue{
+    color: aliceblue;
+}
+.antiquewhite{
+    color: antiquewhite;
+}
+.aqua{
+    color: aqua;
+}
+.aquamarine{
+    color: aquamarine;
+}
+.azure{
+    color: azure;
+}
+.beige{
+    color: beige;
+}
+.bisque{
+    color: bisque;
+}
+.black{
+    color: black;
+}
+.blanchedalmond{
+    color: blanchedalmond;
+}
+.blue{
+    color: blue;
+}
+.blueviolet{
+    color: blueviolet;
+}
+.brown{
+    color: brown;
+}
+.burlywood{
+    color: burlywood;
+}
+.red{
+    color: red;
+}
+.white{
+    color: white;
+}
+/* bgcolors */
+.bg-aliceblue{
+    background-color: aliceblue;
+}
+.bg-antiquewhite{
+    background-color: antiquewhite;
+}
+.bg-aqua{
+    background-color: aqua;
+}
+.bg-aquamarine{
+    background-color: aquamarine;
+}
+.bg-azure{
+    background-color: azure;
+}
+.bg-beige{
+    background-color: beige;
+}
+.bg-bisque{
+    background-color: bisque;
+}
+.bg-black{
+    background-color: black;
+}
+.bg-blanchedalmond{
+    background-color: blanchedalmond;
+}
+.bg-blue{
+    background-color: blue;
+}
+.bg-blueviolet{
+    background-color: blueviolet;
+}
+.bg-brown{
+    background-color: brown;
+}
+.bg-burlywood{
+    background-color: burlywood;
+}
+.bg-red{
+    background-color: red;
+}
+bg-white{
+    background-color: white;
+}
+/* Tags Type */
+.tt-h1{
+    display: block;
+    font-size: xx-large;
+    margin: 0.67em 0;
+    font-weight: bold;
+}
+.tt-h2{
+    display: block;
+    font-size: x-large;
+    margin: 0.83em 0;
+    font-weight: bold;
+}
+.tt-h3{
+    display: block;
+    font-size: larger;
+    margin: 1em 0;
+    font-weight: bold;
+}
+.tt-h4{
+    display: block;
+    font-size: medium;
+    margin: 1.33em 0;
+    font-weight: bold;
+}
+.tt-h5{
+    display: block;
+    font-size: 0.83em;
+    margin: 1.67em 0;
+    font-weight: bold;
+}
+.tt-h6{
+    display: block;
+    font-size: 0.67em;
+    margin: 2.33em 0;
+    font-weight: bold;
+}
+.tt-div{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.tt-p{
+    display: block;
+    margin: 1em 0;
+}
+.tt-span{
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+}
