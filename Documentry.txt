@@ -1,26 +1,26 @@
 Advance HTML codes...
-<!--
-      fix footer ad...
+
+      <!--fix footer ad-->
 
 <div id="fix-footer-ad-content" class="null"><!-- This is Your content --></div>
 <div id="fix-footer-ad" wait="0"></div>  
         
 
 
-      fix overlay...
+      <!--fix overlay-->
 
-<div id="fix-footer-ad" wait="0">This is Your content</div>  
+<div id="fix-overlay" wait="0"></div>  
         
         
-     For ⚙ Tools
+     <!--For ⚙ Tools-->
 <div id="webtool-place" class="null"></div>   
         
         
         
-     For ⚙ Custom Tag or items list
+     <!--For ⚙ Custom Tag or items list-->
 <div id="tag-list-preview"></div>
         
--->
+
 
   <script src="file:///C:/Users/Public/Desktop/SkytoSeeTools/SkytoSeeToolsv1.js"></script>
   <!-- <script src="https://mnzrch.github.io/SkytoSeeTools/SkytoSeeToolsv1.js"></script> -->
