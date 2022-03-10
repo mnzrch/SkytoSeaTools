@@ -22,5 +22,6 @@ Advance HTML codes...
         
 
 
-  <script src="file:///C:/Users/Public/Desktop/SkytoSeeTools/SkytoSeeToolsv1.js"></script>
-  <!-- <script src="https://mnzrch.github.io/SkytoSeeTools/SkytoSeeToolsv1.js"></script> -->
+<!--   <script src="https://mnzrch.github.io/SkytoSeeTools/SkytoSeeToolsv1.js"></script> -->
+<!--   <script id="SkytoSeeToolf" src="https://mnzrch.github.io/SkytoSeeTools/Tools/tools fetcher.js"></script> -->
+<!--   <script id="SkytoSeeToolf" src="https://mnzrch.github.io/SkytoSeeTools/Scripts/classes.js"></script> -->
