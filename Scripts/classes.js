@@ -111,7 +111,7 @@ setTimeout(() => {
 
 if (cls('for-tag-list') != null) {
     if (id('tag-list-preview') != null) {
-        id('tag-list-preview').innerHTML = '<div class="custom-tag-list"><div class="custom-tag-list-ctrl"><img id="custom-tag-list-right" class="disable button" src="https://i.ibb.co/n3Nh2Jm/right.png"><img id="custom-tag-list-left" class="button" src="https://i.ibb.co/RgTqMnt/left.png"><img id="custom-tag-list-mini" class="button" onclick=custom_tag_list_mini() src="https://i.ibb.co/kmFgFjZ/mini.png"><img id="custom-tag-list-close" class="button" src="https://i.ibb.co/8bD7RWP/close.png"></div><div class="custom-tag-list-content"></div><div class="null" style="visibility: hidden;"><div class="custom-tag-list-backup-right"></div><div class="custom-tag-list-backup-left"></div><div class="custom-tag-list-backup-height"></div><div class="custom-tag-list-backup-width"></div></div></div>';
+        id('tag-list-preview').innerHTML = '<div class="custom-tag-list"><div class="custom-tag-list-ctrl"><img id="custom-tag-list-right" class="disable btnv1" src="https://i.ibb.co/n3Nh2Jm/right.png"><img id="custom-tag-list-left" class="btnv1" src="https://i.ibb.co/RgTqMnt/left.png"><img id="custom-tag-list-mini" class="btnv1" onclick=custom_tag_list_mini() src="https://i.ibb.co/kmFgFjZ/mini.png"><img id="custom-tag-list-close" class="btnv1" src="https://i.ibb.co/8bD7RWP/close.png"></div><div class="custom-tag-list-content"></div><div class="null" style="visibility: hidden;"><div class="custom-tag-list-backup-right"></div><div class="custom-tag-list-backup-left"></div><div class="custom-tag-list-backup-height"></div><div class="custom-tag-list-backup-width"></div></div></div>';
     }
     if (cls('custom-tag-list-content') != null) {
         cls('custom-tag-list-content').innerHTML = cls('for-tag-list').innerHTML;
@@ -134,8 +134,8 @@ if (cls('custom-tag-list') != null) {
         id('custom-tag-list-left').addEventListener('click', () => {
             cls('custom-tag-list').style.right = '0px';
             cls('custom-tag-list').style.left = 'unset';
-            id('custom-tag-list-left').setAttribute('class', 'disable button');
-            id('custom-tag-list-right').setAttribute('class', 'button');
+            id('custom-tag-list-left').setAttribute('class', 'disable btnv1');
+            id('custom-tag-list-right').setAttribute('class', 'btnv1');
             if (cls('custom-tag-list-backup-right') != null) {
                 cls('custom-tag-list-backup-right').innerHTML = getComputedStyle(cls('custom-tag-list')).right;
             }
@@ -155,8 +155,8 @@ if (cls('custom-tag-list') != null) {
         id('custom-tag-list-right').addEventListener('click', () => {
             cls('custom-tag-list').style.left = '0px';
             cls('custom-tag-list').style.right = 'unset';
-            id('custom-tag-list-right').setAttribute('class', 'disable button');
-            id('custom-tag-list-left').setAttribute('class', 'button');
+            id('custom-tag-list-right').setAttribute('class', 'disable btnv1');
+            id('custom-tag-list-left').setAttribute('class', 'btnv1');
             if (cls('custom-tag-list-backup-right') != null) {
                 cls('custom-tag-list-backup-right').innerHTML = getComputedStyle(cls('custom-tag-list')).right;
             }
@@ -209,10 +209,10 @@ function custom_tag_list_mini() {
         cls('custom-tag-list').style.right = 'unset';
     }
     if (id('custom-tag-list-right') != null) {
-        id('custom-tag-list-right').setAttribute('class', 'disable button');
+        id('custom-tag-list-right').setAttribute('class', 'disable btnv1');
     }
     if (id('custom-tag-list-left') != null) {
-        id('custom-tag-list-left').setAttribute('class', 'button');
+        id('custom-tag-list-left').setAttribute('class', 'btnv1');
     }
 }
 function custom_tag_list_maxi() {
@@ -230,10 +230,10 @@ function custom_tag_list_maxi() {
                 cls('custom-tag-list').style.right = '0px';
                 cls('custom-tag-list').style.left = 'unset';
                 if (id('custom-tag-list-right') != null) {
-                    id('custom-tag-list-right').setAttribute('class', 'button');
+                    id('custom-tag-list-right').setAttribute('class', 'btnv1');
                 }
                 if (id('custom-tag-list-left') != null) {
-                    id('custom-tag-list-left').setAttribute('class', 'disable button');
+                    id('custom-tag-list-left').setAttribute('class', 'disable btnv1');
                 }
             } else {
                 cls('custom-tag-list').style.right = 'unset';
