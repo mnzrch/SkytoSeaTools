@@ -32,6 +32,7 @@ if (window.location.href.match('quirytool=ehsaas') != null) {
             if (cls('ehsaas-frame') != null) {
                 cls('ehsaas-frame').style.height = window.innerHeight + 'px';
                 cls('ehsaas-frame').style.width = window.innerWidth + 'px';
+                cls('ehsaas-frame').style.overflowY = 'auto';
             }
             id('webtool-place').setAttribute('class', '');
         }, 1000)
