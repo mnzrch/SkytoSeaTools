@@ -274,6 +274,8 @@
     -khtml-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+    font-size: 13px;
+    line-height: initial;
 }
 .lll-slider-header{
     display: flex;
