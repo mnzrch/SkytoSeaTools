@@ -494,6 +494,62 @@ function sliderloader() {
         }
     };
 }
+// content-list...
+if (cls('content-list') != null) {
+    let clist = document.getElementsByClassName('content-list');
+    Array.prototype.forEach.call(clist, (element) => {
+        let clisthdr = document.createElement('div');
+        clisthdr.setAttribute('class', 'content-list-head dis-block jc-spacebetween');
+        let ctrlclickdata = "if(this.innerHTML=='&Downarrow;'){this.innerHTML='&Uparrow;';this.parentElement.nextElementSibling.style.height='auto';this.parentElement.nextElementSibling.style.padding='5px';}else{this.innerHTML='&Downarrow;';this.parentElement.nextElementSibling.style.height='0px';this.parentElement.nextElementSibling.style.padding='0px';}";
+        clisthdr.innerHTML = '<span class="content-list-header"></span><span class="content-list-ctrl" onclick="' + ctrlclickdata + '"></span>';
+        let clistcntnt = document.createElement('div');
+        clistcntnt.setAttribute('class', 'content-list-content');
+        clistcntnt.innerHTML = element.innerHTML;
+        element.innerHTML = '';
+        element.appendChild(clisthdr);
+        element.appendChild(clistcntnt);
+        element.style.visibility = 'visible';
+        // let clistname = element.getAttribute('name');
+        let clistheader = document.getElementsByClassName('content-list-header');
+        Array.prototype.forEach.call(clistheader, (element0) => {
+            let clistname = element0.parentElement.parentElement.getAttribute('name');
+            if (clistname == 'no') {//name
+                element0.innerHTML = '!';
+            } else if (clistname == 'nill') {
+                element0.innerHTML = '';
+            } else if (clistname != null && clistname != '') {
+                element0.innerHTML = clistname;
+            } else {
+                element0.innerHTML = 'Content List by LetsLearnLights';
+            }
+        })
+        let cntntctrl = document.getElementsByClassName('content-list-ctrl');
+        Array.prototype.forEach.call(cntntctrl, (element1) => {
+            let ctrlmainele = element1.parentElement.parentElement;
+            let clistmode = ctrlmainele.getAttribute('mode');
+            let ctrlnextele = element1.parentElement.nextElementSibling;
+            if (ctrlmainele.getAttribute('content-bg') != null) {
+                ctrlnextele.style.backgroundColor = ctrlmainele.getAttribute('content-bg');
+            }
+            if (clistmode == 'opened') {//ctrl
+                element1.innerHTML = '&Uparrow;';
+                ctrlnextele.style.height = 'auto';
+                ctrlnextele.style.padding = '5px';
+            } else {
+                element1.innerHTML = '&Downarrow;';
+            }
+            // function ctrlclickfun() {
+            //     if (element1.innerHTML == '&Downarrow;') {
+            //         ctrlnextele.style.height = 'auto';
+            //         ctrlnextele.style.padding = '5px';
+            //     } else {
+            //         ctrlnextele.style.height = '0px';
+            //         ctrlnextele.style.padding = '0px';
+            //     }
+            // }
+        })
+    });
+}
 
 
 
