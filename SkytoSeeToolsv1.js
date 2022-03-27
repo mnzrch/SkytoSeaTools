@@ -461,10 +461,17 @@ function sliderloader() {
                             }, 50);
                             previousimg.setAttribute('id', '1')
                             playslider();
-                        }, usertrans);
+                        }, nextplay);
                     }
                 }, 5)
             }
+            setInterval(() => {
+                if (previousimg.id == totalimgsnum) {
+                    id('autoplaybtn').style.display = 'none';
+                } else {
+                    id('autoplaybtn').style.display = 'flex';
+                }
+            }, 5)
             window.onresize = function () { // onResize...
                 cls('lll-slider-img').style.transition = '0s'; // transition-...
                 cls('lll-slider-img').style.marginLeft = -cls('lll-slider-imgwrap').clientWidth * (previousimg.id - 1) + 'px'; // mleft...
@@ -501,7 +508,7 @@ if (cls('content-list') != null) {
         let clisthdr = document.createElement('div');
         clisthdr.setAttribute('class', 'content-list-head dis-block jc-spacebetween');
         let ctrlclickdata = "if(this.innerHTML=='&Downarrow;'){this.innerHTML='&Uparrow;';this.parentElement.nextElementSibling.style.height='auto';this.parentElement.nextElementSibling.style.padding='5px';}else{this.innerHTML='&Downarrow;';this.parentElement.nextElementSibling.style.height='0px';this.parentElement.nextElementSibling.style.padding='0px';}";
-        clisthdr.innerHTML = '<span class="content-list-header"></span><span class="content-list-ctrl" onclick="' + ctrlclickdata + '"></span>';
+        clisthdr.innerHTML = '<span class="content-list-ctrl" onclick="' + ctrlclickdata + '"></span><div class="content-list-header"></div>';
         let clistcntnt = document.createElement('div');
         clistcntnt.setAttribute('class', 'content-list-content');
         clistcntnt.innerHTML = element.innerHTML;
