@@ -1,0 +1,124 @@
+/*  */
+.lll-ctrlpnl {
+    position: fixed;
+    width: auto;
+    height: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1100;
+    background: linear-gradient(180deg, #ff000094, #10ff0091);
+    background-color: white;
+    display: none;
+}
+
+.lll-ctrlpnl:hover{
+    opacity: 100%;
+}
+
+.lll-ctrlpnl-playbtn-ctrl{
+    width: fit-content;
+    height: fit-content;
+    transform: matrix(2, 0, 0, 2, 0, 0);
+    margin: -2px 0px 0px 0px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.lll-ctrlpnl-playbtn-ctrl:hover{
+    transform: matrix(1.8, 0, 0, 1.8, 0, 0);
+}
+
+.lll-ctrlpnl-logo{
+    cursor: pointer;
+}
+
+.lll-ctrlpnl-playbtn{
+    display: flex;
+}
+
+.lll-ctrlpnl-playbtn>img{
+    width: 60px;
+}
+
+.lll-ctrlpnl-header {
+    background: white;
+    width: -webkit-fill-available;
+    padding: 5px;
+    box-shadow: inset 0px 0px 10px 5px #006464;
+    font-family: fantasy;
+}
+
+.lll-ctrlpnl-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+    height: -webkit-fill-available;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.lll-ctrlpnl-ctrl {
+    margin: -2px -3px 0px 0px;
+    float: right;
+}
+
+.lll-ctrlpnl-content-box {
+    overflow: hidden;
+    cursor: pointer;
+    width: 200px;
+    height: 230px;
+    background-color: white;
+    color: black;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px 2px #006464;
+    transition: linear 0.3s;
+}
+
+.lll-ctrlpnl-content-box:hover {
+    transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+
+.lll-ctrlpnl-content-box>img {
+    width: inherit;
+    background-color: #520000;
+}
+
+.lll-ctrlpnl-content-box>div {
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: cursive;
+    margin: 0px;
+    margin-top: -6px;
+    padding: 5px;
+}
+
+@media (max-width: 690px) {
+    .lll-ctrlpnl-content-box {
+        width: 150px;
+        height: 172px;
+    }
+
+    .lll-ctrlpnl-content-box>div {
+        padding: 2px;
+        margin-top: -8px;
+    }
+}
+
+@media (max-width: 540px) {
+    .lll-ctrlpnl-content-box {
+        width: 100px;
+        height: 115px;
+    }
+
+    .lll-ctrlpnl-content-box>div {
+        font-size: 10px;
+        padding: 4px;
+    }
+}

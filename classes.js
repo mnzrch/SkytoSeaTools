@@ -61,11 +61,21 @@ if (cls('disable') != null) {
         element.setAttribute('title', 'This item has been Disabled');
     });
 }
-if (cls('bt-url') != null) {
-    let bturl = document.getElementsByClassName('bt-url');
-    Array.prototype.forEach.call(bturl, (element) => {
-        element.onclick = function () {
-            window.open(element.getAttribute('url'),'_blank');
-        }
-    });
-}
+setInterval(() => {
+    if (cls('bt-url') != null) {
+        let bturl = document.getElementsByClassName('bt-url');
+        Array.prototype.forEach.call(bturl, (element) => {
+            element.onclick = function () {
+                window.open(element.getAttribute('url'),'_blank');
+            }
+        });
+    }
+    if (cls('bt-0url')) {
+        let bt0url = document.getElementsByClassName('bt-0url');
+        Array.prototype.forEach.call(bt0url, (element) => {
+            element.onclick = function () {
+                window.location.href = element.getAttribute('url');
+            }
+        });
+    }
+}, 1000);

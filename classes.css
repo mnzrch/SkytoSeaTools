@@ -14,6 +14,7 @@
     align-self: center;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 .btnv1:active{
     border-style: outset;
@@ -44,10 +45,12 @@
     align-self: center;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 .btnv2:active{
     border: 2px inset red;
     background: #2a0000;
+    margin: 1.5px 0px;
 }
 .btnv2:hover{
     box-shadow: 0px 0px 2px rgb(0, 255, 13);
