@@ -17,8 +17,8 @@ if (window.location.protocol == 'file:') {
 //            Overlay
 setTimeout(() => {
     if (id('fix-overlay') != null) {
-        id('fix-overlay').setAttribute('class', 'fix top-0 right-0 left-0 bottom-0 padding-10 bg-black index-997');
-        id('fix-overlay').innerHTML = id('fix-overlay').innerHTML + '<span id="fix-overlay-ctrl" class="margin-5 fix right-0 top-0 btnv1">⨯</span>';
+        id('fix-overlay').setAttribute('class', 'padding-10 bg-black');
+        id('fix-overlay').innerHTML = id('fix-overlay').innerHTML + '<span id="fix-overlay-ctrl" class="margin-5 btnv1">⨯</span>';
         if (window.location.href.match('mywebapp') != null) {
             id('fix-overlay-ctrl').remove();
             id('fix-overlay').style.background = 'black';
@@ -50,7 +50,7 @@ setTimeout(() => {
 //            footer ad
 setTimeout(() => {
     if (id('fix-footer-ad') != null) {
-        id('fix-footer-ad').innerHTML = '<div id="custom-footer-ad" class="w-inherit fix h-25pc maxh-250 minh-100 right-0 bottom-0 left-0 index-996"><span id="custom-footer-ctrl-shadow"></span><span id="custom-footer-ctrl">▽</span><div id="custom-footer-adhere" class="w-wfa h-wfa margin-5 of-hide bg-aliceblue">Adhere</div></div>';
+        id('fix-footer-ad').innerHTML = '<div id="custom-footer-ad" class="w-inherit fix h-25pc"><span id="custom-footer-ctrl-shadow"></span><span id="custom-footer-ctrl">▽</span><div id="custom-footer-adhere" class="w-wfa h-wfa margin-5 bg-aliceblue">Adhere</div></div>';
         if (id('custom-footer-adhere') != null && id('fix-footer-ad-content') != null) {
             id('custom-footer-adhere').innerHTML = id('fix-footer-ad-content').innerHTML.replace('<!--', '').replace('-->', '');
         }
@@ -259,7 +259,7 @@ let onloadslider = setInterval(() => {
 function sliderloader() {
     if (id('for-lll-slider') != null & id('lll-slider-content') != null) {
         ctrlpnt = '<div class="lll-slider-ctrlpnl" style="visibility: hidden;"><div class="lll-slider-ctrlpnl-header">Control Panel <span id="down">&Downarrow;</span></div><div class="lll-slider-ctrlpnl-content"><div id="autoplaybtn">Autoplay <div id="autoplay" class="checkbox"></div></div><div id="builtsbtn">Builts <div id="builts" class="checkbox"></div></div><div id="nextplaybtn">Nextplay <input title="Delay in Seconds" id="nextplay" type="number" onclick="if(this.value<=0){this.value=0}else if(this.value>=99){this.value=99}"></div><div id="transitionbtn">Transition <input title="Animation in Seconds" id="transition" type="number" onclick="if(this.value<=0){this.value=0}else if(this.value>=99){this.value=99}"></div><div id="ctrlpnl-note" class="red bg-black">Note: Changes may apply after slider full rout completed!</div></div></div>';
-        id('for-lll-slider').innerHTML = '<div class="lll-slider w-wfa maxw-1260 bg-black disableCM" style="visibility: hidden;"><div class="lll-slider-header f-monospace"><div class="lll-slider-header-mono"><div class="lll-slider-header-mono-dot"><div class="lll-slider-header-dot bg-white"></div><div class="lll-slider-header-dot bg-red"></div><div class="lll-slider-header-dot bg-green"></div></div><span class="lll-slider-header-title">LLL Slider</span></div>' + ctrlpnt + '</div><div class="lll-slider-ctrl absolute dis-flex ai-center jc-spacebetween padding-10"><img class="lll-slider-previousimg" title="Previous" src="' + assestdir + '/right.png"><img class="lll-slider-nextimg" title="Next" src="' + assestdir + '/left.png"></div><div class="lll-slider-imgwrap bg-white w-wfa h-wfa of-hidden"></div><div class="lll-slider-bulitwrap w-wfa h-auto"><div class="lll-slider-bulit bg-transparent w-wfa"></div></div><div class="lll-slider-Copyright f-monospace index-1000">Powered by<br><a class="black" href="https://letslearnlights.blogspot.com/" target="_blank" title="Developer&apos;s Website, Free Technices">LetsLearnLights</a></div></div>';
+        id('for-lll-slider').innerHTML = '<div class="lll-slider w-wfa bg-black disableCM" style="visibility: hidden;"><div class="lll-slider-header f-monospace"><div class="lll-slider-header-mono"><div class="lll-slider-header-mono-dot"><div class="lll-slider-header-dot bg-white"></div><div class="lll-slider-header-dot bg-red"></div><div class="lll-slider-header-dot bg-green"></div></div><span class="lll-slider-header-title">LLL Slider</span></div>' + ctrlpnt + '</div><div class="lll-slider-ctrl absolute dis-flex ai-center jc-spacebetween padding-10"><img class="lll-slider-previousimg" title="Previous" src="' + assestdir + '/right.png"><img class="lll-slider-nextimg" title="Next" src="' + assestdir + '/left.png"></div><div class="lll-slider-imgwrap bg-white w-wfa h-wfa"></div><div class="lll-slider-bulitwrap w-wfa h-auto"><div class="lll-slider-bulit bg-transparent w-wfa"></div></div><div class="lll-slider-Copyright f-monospace">Powered by<br><a class="black" href="https://letslearnlights.blogspot.com/" target="_blank" title="Developer&apos;s Website, Free Technices">LetsLearnLights</a></div></div>';
         let usercontent = id('lll-slider-content').innerHTML.replace('<!--', '').replace('-->', '');
         sliderImgArea = document.createElement('div');
         sliderImgArea.setAttribute('class', 'lll-slider-img of-hidden');
