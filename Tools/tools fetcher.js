@@ -21,14 +21,14 @@ if (window.location.href.match('quirytool=ehsaas') != null) {
     if (id('webtool-place') != null) {
         let webtoolcon = '<span id="fix-overlay-ctrl" class="margin-5 btnv1" style="cursor: pointer;">⨯</span><iframe src="https://ehsaastracking.pass.gov.pk/" frameborder="0" class="ehsaas-frame margin-0"></iframe>';
         id('webtool-place').innerHTML = webtoolcon;
-        document.body.style.overflow = 'hidden';
+        window.body.style.overflow = 'hidden';
         if (window.location.href.match('mywebapp') != null) {
             id('fix-overlay-ctrl').remove();
         } else {
             id('fix-overlay-ctrl').addEventListener('click', () => {
                 id('webtool-place').remove();
-                document.body.style.overflowX = 'hidden';
-                document.body.style.overflowY = 'auto';
+                window.body.style.overflowX = 'hidden';
+                window.body.style.overflowY = 'auto';
             })
         }
         setTimeout(() => {
