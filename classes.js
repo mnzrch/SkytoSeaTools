@@ -53,7 +53,6 @@ if (cls('toparrow') != null) {
     let toparrow = document.getElementsByClassName('toparrow');
     Array.prototype.forEach.call(toparrow, (element) => {
         element.innerHTML = '<a href="#topofart" id="toparrow" style="color: green; text-align: right;"><span class="text">Top</span><span class="sym">↑</span></a>';
-        });
     });
 }
 if (cls('disable') != null) {
@@ -73,7 +72,7 @@ setInterval(() => {
         let bturl = document.getElementsByClassName('bt-url');
         Array.prototype.forEach.call(bturl, (element) => {
             element.onclick = function () {
-                window.open(element.getAttribute('url'),'_blank');
+                window.open(element.getAttribute('url'), '_blank');
             }
         });
     }
