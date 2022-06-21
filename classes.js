@@ -49,6 +49,13 @@ if (cls('reload') != null) {
         });
     });
 }
+if (cls('toparrow') != null) {
+    let reload = document.getElementsByClassName('toparrow');
+    Array.prototype.forEach.call(toparrow, (element) => {
+        element.innerHTML = '<a href="#topofart" id="toparrow" style="color: green; text-align: right;"><span class="text">Top</span><span class="sym">↑</span></a>';
+        });
+    });
+}
 if (cls('disable') != null) {
     let disable = document.getElementsByClassName('disable');
     Array.prototype.forEach.call(disable, (element) => {
