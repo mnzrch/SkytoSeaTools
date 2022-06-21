@@ -50,7 +50,7 @@ if (cls('reload') != null) {
     });
 }
 if (cls('toparrow') != null) {
-    let reload = document.getElementsByClassName('toparrow');
+    let toparrow = document.getElementsByClassName('toparrow');
     Array.prototype.forEach.call(toparrow, (element) => {
         element.innerHTML = '<a href="#topofart" id="toparrow" style="color: green; text-align: right;"><span class="text">Top</span><span class="sym">↑</span></a>';
         });
