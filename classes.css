@@ -876,7 +876,7 @@ ql>li::after {
     padding-left: 2px;
 }
 
-qul {
+uql {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -885,24 +885,24 @@ qul {
     padding-inline-start: 40px;
 }
 
-qul>li {
+uql >li {
     display: list-item;
     text-align: -webkit-match-parent;
     list-style-type: disc;
     margin-left: -16px;
 }
 
-qul>li::before {
+uql >li::before {
     content: '';
     margin-left: -5px;
 }
 
-qul>li::after {
+uql >li::after {
     content: '?';
     padding-left: 2px;
 }
 
-qol {
+oql {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -911,19 +911,19 @@ qol {
     padding-inline-start: 40px;
 }
 
-qol>li {
+oql >li {
     display: list-item;
     text-align: -webkit-match-parent;
     list-style-type: decimal;
     margin-left: -16px;
 }
 
-qul>li::before {
+oql >li::before {
     content: '';
     margin-left: -5px;
 }
 
-qol>li::after {
+oql >li::after {
     content: '?';
     padding-left: 2px;
 }
@@ -948,7 +948,7 @@ el>li::after {
     padding-left: 2px;
 }
 
-eul {
+uel {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -957,24 +957,24 @@ eul {
     padding-inline-start: 40px;
 }
 
-eul>li {
+uel >li {
     display: list-item;
     text-align: -webkit-match-parent;
     list-style-type: disc;
     margin-left: -16px;
 }
 
-eul>li::before {
+uel >li::before {
     content: '';
     margin-left: -5px;
 }
 
-eul>li::after {
+uel >li::after {
     content: '!';
     padding-left: 2px;
 }
 
-eol {
+oel {
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -983,19 +983,19 @@ eol {
     padding-inline-start: 40px;
 }
 
-eol>li {
+oel >li {
     display: list-item;
     text-align: -webkit-match-parent;
     list-style-type: decimal;
     margin-left: -16px;
 }
 
-eul>li::before {
+oel >li::before {
     content: '';
     margin-left: -5px;
 }
 
-eol>li::after {
+oel >li::after {
     content: '!';
     padding-left: 2px;
 }
