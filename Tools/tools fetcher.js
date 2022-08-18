@@ -12,6 +12,8 @@ var docbodye = document.getElementsByTagName("BODY")[0];
 if (window.location.href.match('quirytool=ist') != null) {
     if (id('webtool-place') != null) {
         let webtoolcon = '<link rel="stylesheet" href="https://mnzrch.github.io/SkytoSeeTools/Tools/3l-ist.css"><div id="fix-overlay"><div class="lll-ist bg-black bs-solid w-maxcon"><div class="lll-ist-credit hdr ai-center t-center w-wfa h-8pc padding-10 bg-black red"><span>Internet Speed Tester by LetsLearnLights</span></div><iframe class="ist-frame h-100pc" scrolling="no" src="https://fast.com/" style="margin-top: -25px;"></iframe><div class="lll-ist-credit ftr ai-center t-center w-wfa h-16pc padding-10 bg-black red"><span>This is a free tool for testing internet speed test from 3L Developers.</span><div class="dis-flex w-wfa jc-spacearound"><a class="social-icon lll" target="blank" href="https://letslearnlights.blogspot.com/" title="LetsLearnLights"></a><a class="social-icon fb" target="blank" href="https://facebook.com/mnzr.chauhan.official" title="facebook"></a><a class="social-icon insta" target="blank" href="https://instagram.com/mnzr.chauhan.official" title="instagram"></a><a class="social-icon yt" target="blank" href="https://www.youtube.com/results?search_query=mnzr+chauhan&sp=EgIQAg%253D%253D" title="youtube"></a></div></div><div style=" margin-top: 2px; height: 20px; box-shadow: 0px 0px 5px white; "></div></div></div>';
+        tag('head > title').innerHTML = 'Internet Speed Tester by LetsLearnLights';
+        tag("head > link:nth-child(7)").href = 'https://mnzrch.github.io/SkytoSeeTools/Tools/assests/fav.ico';
         id('webtool-place').innerHTML = webtoolcon;
         setTimeout(() => {
             id('webtool-place').setAttribute('class', '');
