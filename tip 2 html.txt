@@ -1,0 +1,91 @@
+Advance HTML codes...
+
+
+Add below code at first in <head> tag after web-information...
+
+  <script src="file:///C:/Users/Mc/Desktop/SkytoSeeTool/stsheader.js"></script>
+
+  <!--
+       <script src="https://mnzrch.github.io/SkytoSeeTool/stsheader.js"></script>
+                                                                                   -->
+
+=============================================================================================================
+
+      <!--Notice Box-->
+
+        <div class="not-icon"></div>
+        
+        
+        
+     <!--For Custom Content List-->
+     <div class="content-list" name="Download s02 ep02" mode="closed" content-bg="pink" style="visibility: hidden;">
+          Your Code...
+     </div>  
+
+
+
+     <!--Disable context menu.-->
+
+        <anyelement class="disableCM"></anyelement>
+
+
+
+     <!--Current Page Reloader-->
+
+        <anyelement class="reload"></anyelement>
+
+
+
+     <!--ADD Cross charactor like "⨉"-->
+
+        <anyelement class="htmlcross"></anyelement> // element's content will be reased...
+
+
+
+
+     <!--Jump to specific element-->
+
+        <anyelement class="toparrow" jumpto="id of element where have to jump"></anyelement>
+
+
+
+
+     <!--Make an element disabled-->
+
+        <anyelement class="disable"></anyelement>
+
+
+
+
+     <!--Open New Window on click-->
+
+        <anyelement class="bt-url" url="destination url -> http://example.com"></anyelement>
+
+
+
+
+     <!--Redirect current window or page to new location-->
+
+        <anyelement class="bt-0url" url="destination location url -> http://example.com"></anyelement>
+
+
+
+
+     <!--For ⚙ Tools-->
+<div id="webtool-place" class="null"></div>   
+
+
+
+
+  <link rel="stylesheet" href="file:///C:/Users/Mc/Desktop/SkytoSeeTool/SkytoSeeToolsv1.css">
+  <link rel="stylesheet" href="file:///C:/Users/Mc/Desktop/SkytoSeeTool/Tools/3l-ist.css">
+  <script src="file:///C:/Users/Mc/Desktop/SkytoSeeTool/SkytoSeeToolsv1.js"></script>
+  <script src="file:///C:/Users/Mc/Desktop/SkytoSeeTool/Tools/tools fetcher.js"></script>
+
+
+  <!-- 
+      <link rel="stylesheet" href="https://mnzrch.github.io/SkytoSeeTool/SkytoSeeToolsv1.css">
+      <link rel="stylesheet" href="https://mnzrch.github.io/SkytoSeeTool/Tools/3l-ist.css">
+      <script src="https://mnzrch.github.io/SkytoSeeTool/SkytoSeeToolsv1.js"></script>
+      <script src="https://mnzrch.github.io/SkytoSeeTool/Tools/tools fetcher.js"></script>
+                                                                                             -->

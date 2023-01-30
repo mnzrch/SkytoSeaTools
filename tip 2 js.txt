@@ -1,0 +1,134 @@
+Advance JavaScript codes...
+
+
+Add below code at first in <head> tag after web-information...
+
+  <script src="file:///C:/Users/Mc/Desktop/SkytoSeeTool/stsHT.js"></script>
+
+  <!--
+       <script src="https://mnzrch.github.io/SkytoSeeTool/stsHT.js"></script>
+                                                                                   -->
+
+=============================================================================================================
+
+ <!--A html tag selector by tag name-->
+                   tag('h1');
+
+ <!--All html tag selector by tag name-->
+                   $tag('h1');
+
+ <!--A html tag selector by class name-->
+                   cls('class-name');
+
+ <!--All html tag selector by class name-->
+                   $cls('class-name');
+
+ <!--A html tag selector by id name-->
+                   id('id-name');
+
+ <!--All html tag selector by id name-->
+                   $id('id-name');
+
+ <!--Set a cookie-->
+                   setCoki(name, value, options = {}) as =>
+                   setCoki('Cookie name', 'Cookie value', { 'max-age': 30 * 24 * 60 * 60 });
+                   // max-age will be consider in seconds like in above example 30 * 24 * 60 * 60 mean 2592000 Seconds
+                   // vist for more options...
+
+ <!--Get a cookie-->
+                   getCoki(name); // name mean the name of cookie.
+
+ <!--Delete a cookie-->
+                   delCoki(name); // name mean the name of cookie.
+
+ <!--SetAttribute-->
+                   setAttr('attributeName', 'attributeValue', element); // setAttr('value', 'new value', selector(element));
+
+ <!--getAttribute-->
+                   getAttr('attributeName', element); // getAttr('value', selector(element));
+
+ <!--getCSS-->
+                   getCSS('CSS-Property', element); // getCSS('height', selector(element));
+
+ <!--setCSS-->
+                   // setCSS('height', '200px', selector(element));
+                   // setCSS('backgroundColor', 'white', selector(element));
+                   // setCSS('borderRightColor', 'black', selector(element));
+
+                   setCSS('CSS-Property', 'value', element);
+
+ <!--Window height and width-->
+                   // winh() -- returned window inner height
+                   // winw() -- returned window inner width
+
+ <!--On click-->
+                   // Runing a function on click;
+                   // click(functionName, selector(element));
+                   // functionName name a function which will run onclick triger while selector(element)
+                   // mean an element which going to be clicked
+
+                   click(myfun, xElement);
+                   function myfun() {
+                        // your function
+                        // example...
+                        // alert('Element clicked');
+                   }
+
+ <!--On resize-->
+                   // Runing a function on resize;
+                   // resize(functionName, selector(element));
+                   // functionName name a function which will run onresize triger while selector(element)
+                   // mean an element which going to be resized
+
+                   resize(myfun, window);
+                   function myfun() {
+                        // your function
+                        // example...
+                        // alert('Element resized');
+                   }
+
+ <!--On input-->
+                   // Runing a function on input;
+                   // input(functionName, selector(element));
+                   // functionName name a function which will run oninput triger while selector(element)
+                   // mean an element which going to be inputed
+
+                   input(myfun, selector(element));
+                   function myfun() {
+                        // your function
+                        // example...
+                        // alert('Element input Detected');
+                   }
+
+ <!--Creating New Element or newEle-->
+                   // Using this function you can create new html element include content (optional)
+                   // like newEle('content', 'element') or  newEle('element')
+
+                   newEle('This is New Div Element','div'); // output <div>This is New Div Element</div>
+                   newEle('div'); // output <div></div>
+
+ <!--innerHTML = past html code inside selected element-->
+                   // Using this function you can past html inside selected element
+                   // like html('This html content', selector(element)) or  html('<div>This html code</div>', selector(element))
+                   
+                   html('html code', element);
+
+ <!--URL Parameters-->
+                   // Using this function helps to get url parameters easily
+                   // you don't need to get url search parameters by own whole script
+                   // like if url anyweb.exe/anypage?id=xyz&ussd=abc , The id and ussd are parameters with theire values.
+                   
+                   urlSP('id'); // return value of parameter "id"'s value like xyz according above example
+
+                   
+                   html('html code', element);
+
+ <!--Custom Button With open url and new window open-->
+                   // Using this function helps to open url and open new window without anchor tag.
+                   
+                   <Button class=('btn-url') url=('http://anyweb.exe/path?query')></Button>; // class -> value btn-url triger tag to open new window
+                                                                                             // and btn-0url to url in current window and url attribute
+                                                                                             // define the url of new window or self window
+
+                   
+                   <Button class=('btn-0url') url=('http://anyweb.exe/path?query')></Button>;
