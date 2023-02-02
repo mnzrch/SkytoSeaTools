@@ -6,12 +6,12 @@ if (window.location.protocol == 'file:') {
 } else {
     assestdir = 'https://mnzrch.github.io/SkytoSeeTools/assests'
 };
-function tag(x) {
+function $(x) {
     return document.querySelector(x);
-}
-function $tag(x) {
+}; const tag = $;
+function $$(x) {
     return document.querySelectorAll(x);
-}
+}; const tags = $$;
 function cls(y) {
     return document.querySelector('.' + y);
 }

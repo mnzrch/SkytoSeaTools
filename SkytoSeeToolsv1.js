@@ -23,11 +23,12 @@ const scripts = () => {
         window.onresize = function () {
             lll_listerH();
         }
-        html('<div class="lll-item-lister-'+lll_lister_index+' lll-item-lister of-hidden h-inherit w-wfa lightboxW"> <div class="header dis-flex w-wfa bg-gray padding-2 jc-spacebetween"> <span id="title" class="margin-2 lightele w-wfa relative"><div>Auto Generated List</div></span> <span id="close" title="Click to close it!" class="btnv3 htmlcross"></span> </div> <div class="items dis-flex ai-center fd-column of-auto"></div> </div>', ele);
+        html('<div class="lll-item-lister-' + lll_lister_index + ' lll-item-lister of-hidden h-inherit w-wfa lightboxW"> <div class="header dis-flex w-wfa bg-gray padding-2 jc-spacebetween"> <span id="title" class="margin-2 lightele w-wfa cursor-grab drager"><div class="relative">Auto Generated List</div></span> <span id="close" title="Click to close it!" class="btnv3 htmlcross"></span> </div> <div class="items dis-flex ai-center fd-column of-auto"></div> </div>', ele);
         if (getAttr('name', ele)) {
-            html(getAttr('name', ele), document.querySelector(".lll-item-lister-"+lll_lister_index+">.header>#title>div"));
+            html(getAttr('name', ele), $(".lll-item-lister-" + lll_lister_index + ">.header>#title>div"));
+            setAttr('title', getAttr('name', ele), $(".lll-item-lister-" + lll_lister_index + ">.header>#title>div"));
         }
-        document.querySelector(".lll-item-lister-"+lll_lister_index+">.header>#close").onclick = function () {
+        document.querySelector(".lll-item-lister-" + lll_lister_index + ">.header>#close").onclick = function () {
             setCSS('display', 'none', ele);
         }
         Array.prototype.forEach.call($cls('lll-listed-item'), (ele) => {
@@ -43,7 +44,7 @@ const scripts = () => {
                 setAttr('class', 'item', newele);
             }
             setAttr('href', '#' + getAttr('id', ele) + '', newele);
-            document.querySelector(".lll-item-lister-"+lll_lister_index+">.items").appendChild(newele);
+            document.querySelector(".lll-item-lister-" + lll_lister_index + ">.items").appendChild(newele);
         });
         setCSS('display', 'unset', ele);
     });
@@ -151,9 +152,45 @@ const scripts = () => {
     Array.prototype.forEach.call($cls('htmlcross'), (ele) => {
         html('<span style="position: relative;bottom: -1px;">⨉</span>', ele);
     });
-    // window.onresize = function () {
-    //     lll_listerH();
-    // }
+    // dragger
+    const dragElements = document.querySelectorAll(".dragable");
+    dragElements.forEach(function (dragElement) {
+        const drager = dragElement.querySelector(".drager");
+        setAttr('class', getAttr('class', drager) + ' cursor-grab', drager);
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+        let xOffset = 0;
+        let yOffset = 0;
+        drager.addEventListener("mousedown", dragStart);
+        document.addEventListener("mouseup", dragEnd);
+        document.addEventListener("mousemove", drag);
+        function dragStart(e) {
+            initialX = e.clientX - xOffset;
+            initialY = e.clientY - yOffset;
+            isDragging = true;
+        }
+        function dragEnd(e) {
+            initialX = currentX;
+            initialY = currentY;
+            isDragging = false;
+        }
+        function drag(e) {
+            if (isDragging) {
+                e.preventDefault();
+                currentX = e.clientX - initialX;
+                currentY = e.clientY - initialY;
+                xOffset = currentX;
+                yOffset = currentY;
+                setTranslate(currentX, currentY, dragElement);
+            }
+        }
+        function setTranslate(xPos, yPos, el) {
+            el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+        }
+    });
 };
 // doc_change_detect
 const o = new MutationObserver(m => m.forEach(M => console.log('moded - ' + M) && scripts)); o.observe(document.body, { childList: true, attributes: true, characterData: true });
