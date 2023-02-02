@@ -5187,7 +5187,6 @@
     display: inline-block;
     background: #f5f1f1;
     color: black;
-    margin: 0;
     padding: 2px 5px;
     height: inherit;
     border-radius: 2px;
@@ -5235,6 +5234,7 @@
 
 .lll-item-lister {
     cursor: auto;
+    resize: both;
 }
 
 .lll-item-lister>.header {
@@ -5242,8 +5242,13 @@
 }
 
 .lll-item-lister>.header>#title {
-    right: -3px;
-    bottom: -1px;
+    max-width: calc(100% - 46px);
+}
+
+.lll-item-lister>.header>#title>div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .lll-item-lister>.items {
@@ -5263,6 +5268,7 @@
     padding: 0 5px;
     border-radius: 3px;
     transition: linear .3s;
+    box-shadow: 0px 1px 0px black;
 }
 
 .lll-item-lister>.items>.item:hover {
