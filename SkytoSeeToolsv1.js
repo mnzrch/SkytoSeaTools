@@ -23,7 +23,7 @@ const scripts = () => {
         window.onresize = function () {
             lll_listerH();
         }
-        html('<div class="lll-item-lister-'+lll_lister_index+' lll-item-lister of-hidden h-inherit lightboxW"> <div class="header dis-flex w-wfa bg-gray padding-2 jc-spacebetween"> <span id="title" class="margin-2 lightele w-wfa relative"><div>Auto Generated List</div></span> <span id="close" title="Click to close it!" class="btnv3 htmlcross"></span> </div> <div class="items dis-flex ai-center fd-column of-auto"></div> </div>', ele);
+        html('<div class="lll-item-lister-'+lll_lister_index+' lll-item-lister of-hidden h-inherit w-wfa lightboxW"> <div class="header dis-flex w-wfa bg-gray padding-2 jc-spacebetween"> <span id="title" class="margin-2 lightele w-wfa relative"><div>Auto Generated List</div></span> <span id="close" title="Click to close it!" class="btnv3 htmlcross"></span> </div> <div class="items dis-flex ai-center fd-column of-auto"></div> </div>', ele);
         if (getAttr('name', ele)) {
             html(getAttr('name', ele), document.querySelector(".lll-item-lister-"+lll_lister_index+">.header>#title>div"));
         }
