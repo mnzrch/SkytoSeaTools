@@ -28,7 +28,9 @@ function getAttr(atr, ele) {
     return ele.hasAttribute(atr) ? ele.getAttribute(atr) : undefined;
 }
 function setAttr(atr, atrval, e) {
-    if (e) { return e.setAttribute(atr, atrval); };
+    if (e instanceof Node) {
+        return e.setAttribute(atr, atrval);
+      }
 }
 function click(fun, e) {
     return e.onclick = fun;
