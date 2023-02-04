@@ -2,7 +2,7 @@
 
 let assestdir;
 if (window.location.protocol == 'file:') {
-    assestdir = 'file:///C:/Users/Mc/Desktop/SkytoSeeTool/assests'
+    assestdir = 'file:///C:/Users/mnzrc/Desktop/SkytoSeeTool/assests'
 } else {
     assestdir = 'https://mnzrch.github.io/SkytoSeeTools/assests'
 };
@@ -24,70 +24,84 @@ function id(z) {
 function $id(z) {
     return document.querySelectorAll('#' + z);
 }
-function getAttr(atr, element) {
-    return element.getAttribute(atr);
+function getAttr(atr, ele) {
+    return ele.hasAttribute(atr) ? ele.getAttribute(atr) : undefined;
 }
-function setAttr(atr, atrval, element) {
-    return element.setAttribute(atr, atrval);
+function setAttr(atr, atrval, e) {
+    return e.setAttribute(atr, atrval);
 }
-function click(fun, element) {
-    return element.onclick = fun;
+function click(fun, e) {
+    return e.onclick = fun;
 }
-function resize(fun, element) {
-    return element.onresize = fun;
+function resize(fun, e) {
+    return e.onresize = fun;
 }
-function input(fun, element) {
-    return element.oninput = fun;
+function input(fun, e) {
+    return e.oninput = fun;
 }
-function getCSS(css, element) {
-    return parseInt(getComputedStyle(element)[css]);
+function getCSS(css, e) {
+    return parseInt(getComputedStyle(e)[css]);
 }
-function setCSS(property, value, element) {
-    return element.style[property] = value;
+function setCSS(prpty, vl, e) {
+    var p = prpty.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
+    return e.style[p] = vl;
 }
-function newEle(content, element) {
-    if (element) {
-        let newEle = document.createElement(element);
-        if (content) {
-            newEle.innerHTML = content;
+function $setCSS(objs, ele) {
+    for (var p in objs) {
+        if (objs.hasOwnProperty(p)) {
+            setCSS(p, objs[p], ele);
+        }
+    }
+}
+function setClass(cls, ele) {
+    ele.classList.add(cls);
+}
+function remClass(cls, ele) {
+    ele.classList.remove(cls);
+}
+function newEle(cnt, e) {
+    if (e) {
+        let newEle = document.createe(e);
+        if (cnt) {
+            newEle.innerHTML = cnt;
             return newEle;
         }
         return newEle;
     }
-    return document.createElement(content);
+    return document.createElement(cnt);
 }
-function html(content, element) {
-    return element.innerHTML = content;
+function html(cnt, e) {
+    return e.innerHTML = cnt;
 }
 // Get cookie
-function getCoki(name) {
-    let matches = document.cookie.match(new RegExp(
-        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+function getCoki(n) {
+    let mtchs = document.cookie.match(new RegExp(
+        "(?:^|; )" + n.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
     ));
-    return matches ? decodeURIComponent(matches[1]) : undefined;
+    return mtchs ? decodeURIComponent(mtchs[1]) : undefined;
 }
 // Set cookie
-function setCoki(name, value, options = {}) {
-    options = {
+function setCoki(n, vl, op = {}) {
+    op = {
         path: '/',// add other defaults here if necessary
-        ...options
+        ...op
     };
-    if (options.expires instanceof Date) {
-        options.expires = options.expires.toUTCString();
+    if (op.expires instanceof Date) {
+        op.expires = op.expires.toUTCString();
     }
-    let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
-    for (let optionKey in options) {
-        updatedCookie += "; " + optionKey;
-        let optionValue = options[optionKey];
-        if (optionValue !== true) {
-            updatedCookie += "=" + optionValue;
+    let updtdCK = encodeURIComponent(n) + "=" + encodeURIComponent(vl);
+    for (let opK in op) {
+        updtdCK += "; " + opK;
+        let opVL = op[opK];
+        if (opVL !== true) {
+            updtdCK += "=" + opVL;
         }
     }
-    document.cookie = updatedCookie;
+    document.cookie = updtdCK;
 }
 // Delete cookie
-function delCoki(name) {
-    setCookie(name, "", {
+function delCoki(n) {
+    setCookie(n, "", {
         'max-age': -1
     })
 }
@@ -106,11 +120,11 @@ function winw() {
 }
 // past clipboard
 async function clipboardpast(ele) {
-    let clpdata = await navigator.clipboard.readText();
-    if (clpdata == '') {
+    let clpD = await navigator.clipboard.readText();
+    if (clpD == '') {
         alert('Clipboard is Empty!')
     } else {
-        ele.value = clpdata;
+        ele.value = clpD;
     }
 }
 

@@ -12,6 +12,37 @@ const scripts = () => {
         });
     };
     //---------------------------------------------------------------------------
+    // lll_smart_menu
+    const lllsm = id('lll-smart-menu');
+    if (lllsm) {
+        console.log('lll_smart_menu Enabled');
+        let smenu = $('#lll-smart-menu>img');
+        let mmenu = $('#lll-smart-menu>.main');
+        let mini = $('#lll-smart-menu > div > header > nav > div:nth-child(1)');
+        let close = $('#lll-smart-menu > div > header > nav > div:nth-child(2)');
+        click(function () {
+            setCSS('display', 'none', smenu);
+            setCSS('display', 'flex', mmenu);
+            function lll_menuH() {
+                setCSS('max-height', winh() - (winh() / 100) * 5 - 30 + 'px', mmenu);
+            };
+            lll_menuH();
+            window.onresize = function () {
+                lll_menuH();
+            }
+            setClass('lightboxLG', mmenu);
+            $setCSS({
+                'width': 'fit-content', 'maxWidth': '95%', 'height': 'fit-content', 'max-height': '95%', 'left': '50%', 'transform': 'translate(-50%, -50%)', 'top': '50%'
+            }, lllsm);
+        }, smenu);
+        click(function () {
+            setCSS('display', 'unset', smenu);
+            setCSS('display', 'none', mmenu);
+            setAttr('style', '', lllsm);
+        }, mini);
+        click(function () { lllsm.remove() }, close);
+    }
+    //---------------------------------------------------------------------------
     // Custom item_lister
     let lll_lister_index = 0;
     Array.prototype.forEach.call($cls('lll-item-lister-place'), (ele) => {
@@ -99,20 +130,15 @@ const scripts = () => {
     //---------------------------------------------------------------------------
     // Disable context menu.
     if (cls('disableCM') != null) {
-        let disableCM = $cls('disableCM');
-        Array.prototype.forEach.call(disableCM, (element) => {
-            element.oncontextmenu = function () {
-                return false;
-            }
+        Array.from($cls('disableCM')).forEach(e => {
+            e.oncontextmenu = function () { return false; }
         });
     };
     //---------------------------------------------------------------------------
     // Custom toparrow
     if (cls('toparrow') != null) {
-        let toparrow = $cls('toparrow');
-        Array.prototype.forEach.call(toparrow, (element) => {
-            // element.innerHTML = '<a href="' + element.getAttribute('jumpto') + '" id="toparrow" style="color: green; text-align: right;"><span class="text">Top</span><span class="sym">↑</span></a>';
-            element.innerHTML = '<a href="' + element.getAttribute('jumpto') + '" id="toparrow" style="color: green; text-align: right;">🔝</a>';
+        Array.from($cls('toparrow')).forEach(e => {
+            html('<span>🔝</span>', e);
         });
     };
     //---------------------------------------------------------------------------
@@ -153,38 +179,40 @@ const scripts = () => {
         html('<span style="position: relative;bottom: -1px;">⨉</span>', ele);
     });
     // dragger
-    const dragElements = document.querySelectorAll(".dragable");
+    const dragElements = $cls("dragable");
     dragElements.forEach(function (dragElement) {
         const drager = dragElement.querySelector(".drager");
-        setAttr('class', getAttr('class', drager) + ' cursor-grab', drager);
-        let isDragging = false;
-        let currentX;
-        let currentY;
-        let initialX;
-        let initialY;
-        let xOffset = 0;
-        let yOffset = 0;
-        drager.addEventListener("mousedown", dragStart);
-        document.addEventListener("mouseup", dragEnd);
-        document.addEventListener("mousemove", drag);
-        function dragStart(e) {
-            initialX = e.clientX - xOffset;
-            initialY = e.clientY - yOffset;
-            isDragging = true;
-        }
-        function dragEnd(e) {
-            initialX = currentX;
-            initialY = currentY;
-            isDragging = false;
-        }
-        function drag(e) {
-            if (isDragging) {
-                e.preventDefault();
-                currentX = e.clientX - initialX;
-                currentY = e.clientY - initialY;
-                xOffset = currentX;
-                yOffset = currentY;
-                setTranslate(currentX, currentY, dragElement);
+        if (drager) {
+            setClass('cursor-grab', drager);
+            let isDragging = false;
+            let currentX;
+            let currentY;
+            let initialX;
+            let initialY;
+            let xOffset = 0;
+            let yOffset = 0;
+            drager.addEventListener("mousedown", dragStart);
+            document.addEventListener("mouseup", dragEnd);
+            document.addEventListener("mousemove", drag);
+            function dragStart(e) {
+                initialX = e.clientX - xOffset;
+                initialY = e.clientY - yOffset;
+                isDragging = true;
+            }
+            function dragEnd(e) {
+                initialX = currentX;
+                initialY = currentY;
+                isDragging = false;
+            }
+            function drag(e) {
+                if (isDragging) {
+                    e.preventDefault();
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - initialY;
+                    xOffset = currentX;
+                    yOffset = currentY;
+                    setTranslate(currentX, currentY, dragElement);
+                }
             }
         }
         function setTranslate(xPos, yPos, el) {
