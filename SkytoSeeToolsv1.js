@@ -58,7 +58,7 @@ const scripts = () => {
         if (getAttr('name', ele)) {
             let titlediv = $(".lll-item-lister-" + lll_lister_index + ">.header>#title>div");
             html(getAttr('name', ele), titlediv);
-            setAttr('title', getAttr('name', ele), titlediv;
+            setAttr('title', getAttr('name', ele), titlediv);
         }
         document.querySelector(".lll-item-lister-" + lll_lister_index + ">.header>#close").onclick = function () {
             setCSS('display', 'none', ele);
