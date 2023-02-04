@@ -3,8 +3,8 @@ const scripts = () => {
     //---------------------------------------------------------------------------
     // Custom reloader
     if (cls('reload') != null) {
-        let reload = $cls('reload');
-        Array.prototype.forEach.call(reload, (element) => {
+        let reload = cls('reload');
+        reload.forEach((element) => {
             element.innerHTML = 'Reload';
             element.addEventListener('click', () => {
                 location.reload();
