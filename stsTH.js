@@ -1,5 +1,5 @@
 // Scripts...
-
+console.log('stsTH Loaded successfully!');
 let assestdir;
 if (window.location.protocol == 'file:') {
     assestdir = 'file:///C:/Users/mnzrc/Desktop/SkytoSeeTool/assests'
