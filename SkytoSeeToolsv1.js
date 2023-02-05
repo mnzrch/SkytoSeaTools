@@ -3,10 +3,10 @@ const scripts = () => {
     //---------------------------------------------------------------------------
     // Custom reloader
     if (cls('reload') != null) {
-        let reload = cls('reload');
-        reload.forEach((element) => {
-            element.innerHTML = 'Reload';
-            element.addEventListener('click', () => {
+        let reload = $cls('reload');
+        reload.forEach((e) => {
+            e.innerHTML = 'Reload';
+            e.addEventListener('click', () => {
                 location.reload();
             });
         });
@@ -54,10 +54,11 @@ const scripts = () => {
         window.onresize = function () {
             lll_listerH();
         }
+        let titlediv;
         if (getAttr('name', ele)) {
-            let titlediv = getAttr('name', ele);
+            titlediv = getAttr('name', ele);
         } else {
-            let titlediv = 'Auto Generated List';
+            titlediv = 'Auto Generated List';
         }
         html('<div class="lll-item-lister-' + lll_lister_index + ' lll-item-lister of-hidden h-inherit w-wfa lightboxW"> <div class="header dis-flex w-wfa bg-gray padding-2 jc-spacebetween"> <span id="title" class="margin-2 lightele w-wfa drager"><div class="relative" title="' + titlediv + '">' + titlediv + '</div></span> <span id="close" title="Click to close it!" class="btnv3 htmlcross"></span> </div> <div class="items dis-flex ai-center fd-column of-auto"></div> </div>', ele);
         document.querySelector(".lll-item-lister-" + lll_lister_index + ">.header>#close").onclick = function () {
