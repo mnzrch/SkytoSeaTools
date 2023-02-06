@@ -3,12 +3,11 @@ const scripts = () => {
     //---------------------------------------------------------------------------
     // Custom reloader
     if (cls('reload') != null) {
-        let reload = $cls('reload');
-        reload.forEach((e) => {
+        $cls('reload').forEach((e) => {
             e.innerHTML = 'Reload';
-            e.addEventListener('click', () => {
+            click(function () {
                 location.reload();
-            });
+            }, e);
         });
     };
     //---------------------------------------------------------------------------
@@ -45,7 +44,7 @@ const scripts = () => {
     //---------------------------------------------------------------------------
     // Custom item_lister
     let lll_lister_index = 0;
-    Array.prototype.forEach.call($cls('lll-item-lister-place'), (ele) => {
+    $cls('lll-item-lister-place').forEach((ele) => {
         lll_lister_index++;
         function lll_listerH() {
             setCSS('height', winh() - 20 + 'px', ele);
@@ -84,47 +83,44 @@ const scripts = () => {
     //---------------------------------------------------------------------------
     // content-list...
     if (cls('content-list') != null) {
-        let clist = $cls('content-list');
-        Array.prototype.forEach.call(clist, (element) => {
+        $cls('content-list').forEach((e) => {
             let clisthdr = document.createElement('div');
             clisthdr.setAttribute('class', 'content-list-head dis-block jc-spacebetween');
             let ctrlclickdata = "if(this.innerHTML=='&Downarrow;'){this.innerHTML='&Uparrow;';this.parentElement.nextElementSibling.style.height='auto';this.parentElement.nextElementSibling.style.padding='5px';}else{this.innerHTML='&Downarrow;';this.parentElement.nextElementSibling.style.height='0px';this.parentElement.nextElementSibling.style.padding='0px';}";
             clisthdr.innerHTML = '<span class="content-list-ctrl" onclick="' + ctrlclickdata + '"></span><div class="content-list-header"></div>';
             let clistcntnt = document.createElement('div');
             clistcntnt.setAttribute('class', 'content-list-content');
-            clistcntnt.innerHTML = element.innerHTML;
-            element.innerHTML = '';
-            element.appendChild(clisthdr);
-            element.appendChild(clistcntnt);
-            element.style.visibility = 'visible';
-            // let clistname = element.getAttribute('name');
-            let clistheader = $cls('content-list-header');
-            Array.prototype.forEach.call(clistheader, (element0) => {
-                let clistname = element0.parentElement.parentElement.getAttribute('name');
+            clistcntnt.innerHTML = e.innerHTML;
+            e.innerHTML = '';
+            e.appendChild(clisthdr);
+            e.appendChild(clistcntnt);
+            e.style.visibility = 'visible';
+            // let clistname = e.getAttribute('name');
+            $cls('content-list-header').forEach((e) => {
+                let clistname = e.parentElement.parentElement.getAttribute('name');
                 if (clistname == 'no') { //name
-                    element0.innerHTML = '!';
+                    e.innerHTML = '!';
                 } else if (clistname == 'nill') {
-                    element0.innerHTML = '';
+                    e.innerHTML = '';
                 } else if (clistname != null && clistname != '') {
-                    element0.innerHTML = clistname;
+                    e.innerHTML = clistname;
                 } else {
-                    element0.innerHTML = 'Content List by LetsLearnLights';
+                    e.innerHTML = 'Content List by LetsLearnLights';
                 }
-            })
-            let cntntctrl = $cls('content-list-ctrl');
-            Array.prototype.forEach.call(cntntctrl, (element1) => {
-                let ctrlmainele = element1.parentElement.parentElement;
+            });
+            $cls('content-list-ctrl').forEach((e) => {
+                let ctrlmainele = e.parentElement.parentElement;
                 let clistmode = ctrlmainele.getAttribute('mode');
-                let ctrlnextele = element1.parentElement.nextElementSibling;
-                if (ctrlmainele.getAttribute('content-bg') != null) {
-                    ctrlnextele.style.backgroundColor = ctrlmainele.getAttribute('content-bg');
+                let ctrlnextele = e.parentElement.nextElementSibling;
+                if (getAttr('content-bg', ctrlmainele)) {
+                    ctrlnextele.style.backgroundColor = getAttr('content-bg', ctrlmainele);
                 }
                 if (clistmode == 'opened') { //ctrl
-                    element1.innerHTML = '&Uparrow;';
+                    e.innerHTML = '&Uparrow;';
                     ctrlnextele.style.height = 'auto';
                     ctrlnextele.style.padding = '5px';
                 } else {
-                    element1.innerHTML = '&Downarrow;';
+                    e.innerHTML = '&Downarrow;';
                 }
             })
         });
@@ -132,53 +128,56 @@ const scripts = () => {
     //---------------------------------------------------------------------------
     // Disable context menu.
     if (cls('disableCM') != null) {
-        Array.from($cls('disableCM')).forEach(e => {
+        $cls('disableCM').forEach((e) => {
             e.oncontextmenu = function () { return false; }
         });
     };
     //---------------------------------------------------------------------------
     // Custom toparrow
     if (cls('toparrow') != null) {
-        Array.from($cls('toparrow')).forEach(e => {
+        $cls('toparrow').forEach((e) => {
             html('<span>🔝</span>', e);
+            if (id(getAttr('jumpto', e))) {
+                click(function () { id(getAttr('jumpto', e)).scrollIntoView({ block: 'start', behavior: 'smooth' }, true); }, e);
+            } else {
+                click(function () { tag('body').scrollIntoView({ block: 'start', behavior: 'smooth' }, true); }, e);
+            }
         });
+
     };
     //---------------------------------------------------------------------------
     // Custom disable
     if (cls('disable') != null) {
-        let disable = $cls('disable');
-        Array.prototype.forEach.call(disable, (element) => {
-            element.onclick = function () {
+        $cls('disable').forEach((e) => {
+            e.onclick = function () {
                 return false;
             }
-            element.oncontextmenu = function () {
+            e.oncontextmenu = function () {
                 return false;
             }
-            element.setAttribute('title', 'This item has been Disabled');
+            e.setAttribute('title', 'This item has been Disabled');
         });
     };
     //---------------------------------------------------------------------------
     // Custom bt-url
     if (cls('btn-url') != null) {
-        let bturl = $cls('bt-url');
-        Array.prototype.forEach.call(bturl, (element) => {
-            element.onclick = function () {
-                window.open(element.getAttribute('url'), '_blank');
+        $cls('bt-url').forEach((e) => {
+            e.onclick = function () {
+                window.open(getAttr('url', e), '_blank');
             }
         });
     };
     if (cls('btn-0url') != null) {
-        let bt0url = $cls('bt-0url');
-        Array.prototype.forEach.call(bt0url, (element) => {
-            element.onclick = function () {
-                window.location.href = element.getAttribute('url');
+        $cls('bt-0url').forEach((e) => {
+            e.onclick = function () {
+                window.location.href = getAttr('url', e);
             }
         });
     };
     //---------------------------------------------------------------------------
     // Custom htmlcross
-    Array.prototype.forEach.call($cls('htmlcross'), (ele) => {
-        html('<span style="position: relative;bottom: -1px;">⨉</span>', ele);
+    $cls('htmlcross').forEach((e) => {
+        html('<span style="position: relative;bottom: -1px;">⨉</span>', e);
     });
     // dragger
     const dragElements = $cls("dragable");
@@ -217,8 +216,8 @@ const scripts = () => {
                 }
             }
         }
-        function setTranslate(xPos, yPos, el) {
-            el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+        function setTranslate(xPos, yPos, e) {
+            e.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
         }
     });
 };
