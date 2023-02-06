@@ -152,6 +152,7 @@
 .toparrow {
     display: inline-block;
     position: absolute;
+    cursor: pointer;
 }
 
 .toparrow>span {
