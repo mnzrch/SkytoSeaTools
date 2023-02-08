@@ -30,10 +30,13 @@ function getAttr(atr, ele) {
 function setAttr(atr, atrval, e) {
     if (e instanceof Node) {
         return e.setAttribute(atr, atrval);
-      }
+    }
 }
 function click(fun, e) {
     return e.onclick = fun;
+}
+function dclick(fun, e) {
+    return e.ondblclick = fun;
 }
 function resize(fun, e) {
     return e.onresize = fun;
@@ -41,8 +44,8 @@ function resize(fun, e) {
 function input(fun, e) {
     return e.oninput = fun;
 }
-function getCSS(css, e) {
-    return parseInt(getComputedStyle(e)[css]);
+function getCSS(s, e) {
+    return getComputedStyle(e).getPropertyValue(s.replace(/-([a-z])/g, (m, l) => l.toUpperCase()));
 }
 function setCSS(prpty, vl, e) {
     var p = prpty.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
@@ -63,12 +66,12 @@ function remClass(cls, ele) {
 }
 function newEle(cnt, e) {
     if (e) {
-        let newEle = document.createe(e);
+        let ne = document.createElement(e);
         if (cnt) {
-            newEle.innerHTML = cnt;
-            return newEle;
+            ne.innerHTML = cnt;
+            return ne;
         }
-        return newEle;
+        return ne;
     }
     return document.createElement(cnt);
 }

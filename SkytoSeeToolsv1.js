@@ -14,12 +14,23 @@ const scripts = () => {
     // lll_smart_menu
     const lllsm = id('lll-smart-menu');
     if (lllsm) {
+        if (getCoki('lll_smart_menu') == 0) {
+            setCSS('display', 'none', lllsm);
+        };
+        let mtitle;
+        if (getAttr('name', lllsm)) {
+            mtitle = getAttr('name', lllsm);
+        } else {
+            mtitle = 'Smart Menu';
+        }
+        html('<img title="Double Click to open Smart Menu by Letslearnlights" alt="Menu" src="' + assestdir + '/menu.svg"><div class="main null fd-column"> <header class="dis-flex ai-center"> <mtitle title="' + mtitle + '" class="drager">' + mtitle + '</mtitle> <nav> <div class="btnv3"> <span style="position: relative;font-weight: bold;-webkit-text-stroke: thick;">–</span> </div> <div class="btnv3 htmlcross"></div> </nav> </header> <linebreak></linebreak> <dbody class="relative top-7 of-auto"></dbody> </div>', lllsm);
         console.log('lll_smart_menu Enabled');
+        // return;
         let smenu = $('#lll-smart-menu>img');
         let mmenu = $('#lll-smart-menu>.main');
         let mini = $('#lll-smart-menu > div > header > nav > div:nth-child(1)');
         let close = $('#lll-smart-menu > div > header > nav > div:nth-child(2)');
-        click(function () {
+        dclick(function () {
             setCSS('display', 'none', smenu);
             setCSS('display', 'flex', mmenu);
             function lll_menuH() {
@@ -39,13 +50,18 @@ const scripts = () => {
             setCSS('display', 'none', mmenu);
             setAttr('style', '', lllsm);
         }, mini);
-        click(function () { lllsm.remove() }, close);
+        click(function () {
+            lllsm.remove();
+            setCoki('lll_smart_menu', '0', { 'expire': '31104000' });
+        }, close);
     }
     //---------------------------------------------------------------------------
     // Custom item_lister
     let lll_lister_index = 0;
     $cls('lll-item-lister-place').forEach((ele) => {
         lll_lister_index++;
+        let myele = newEle('Listed Items', 'div');
+        setAttr('class', 'lightboxWS dis-inlineB cursor-pointer', myele);
         function lll_listerH() {
             setCSS('height', winh() - 20 + 'px', ele);
         }
@@ -62,8 +78,12 @@ const scripts = () => {
         html('<div class="lll-item-lister-' + lll_lister_index + ' lll-item-lister of-hidden h-inherit w-wfa lightboxW"> <div class="header dis-flex w-wfa bg-gray padding-2 jc-spacebetween"> <span id="title" class="margin-2 lightele w-wfa drager"><div class="relative" title="' + titlediv + '">' + titlediv + '</div></span> <span id="close" title="Click to close it!" class="btnv3 htmlcross"></span> </div> <div class="items dis-flex ai-center fd-column of-auto"></div> </div>', ele);
         document.querySelector(".lll-item-lister-" + lll_lister_index + ">.header>#close").onclick = function () {
             setCSS('display', 'none', ele);
+            let mmdp = $('#lll-smart-menu > div > dbody');
+            if (mmdp) {
+                mmdp.appendChild(myele);
+            }
         }
-        Array.prototype.forEach.call($cls('lll-listed-item'), (ele) => {
+        $cls('lll-listed-item').forEach((ele) => {
             // <a href="#item" title="jump to item" class="item">item</a>
             let newele = newEle('a');
             if (getAttr('name', ele)) {
@@ -78,7 +98,14 @@ const scripts = () => {
             setAttr('href', '#' + getAttr('id', ele) + '', newele);
             document.querySelector(".lll-item-lister-" + lll_lister_index + ">.items").appendChild(newele);
         });
-        setCSS('display', 'unset', ele);
+        let mmdp = $('#lll-smart-menu > div > dbody');
+        if (mmdp && getCSS('display', ele) == 'none') {
+            mmdp.appendChild(myele);
+            click(function () {
+                setCSS('display', 'unset', ele);
+                myele.remove();
+            }, myele);
+        }
     });
     //---------------------------------------------------------------------------
     // content-list...

@@ -1,7 +1,7 @@
 /* quick css */
 ::border_style ::bg_color ::height ::margin ::top ::right ::bottom ::left ::padding ::width ::colors ::float ::visibility ::overflow ::display ::cursor ::position ::flex_direction ::justify_content ::align_content ::align_item ::text_align ::fonts
 /* Special Elements */
-::btnv1 ::btnv2 ::disable ::null ::inputv1 ::light_element ::lightboxW(lightbox_white)
+::btnv1 ::btnv2 ::disable ::null ::inputv1 ::light_element ::lightboxW(lightbox_white) ::lightboxWS(white_smooth) ::lightboxT(turquoise) ::lightboxLG(lightgray) ::lightboxB(blue) ::lightboxDM(darkmagenta) ::linebreak
 /* Tools */
 ::item_lister
 /* Add name of style in any HTML tag's attribute */
@@ -124,6 +124,16 @@
     outline: -webkit-focus-ring-color auto 1px;
 }
 
+linebreak {
+    /* linebreak */
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 0px;
+    box-shadow: 0px 5px 3px 1px black;
+    margin-bottom: 5px;
+}
+
 .disable {
     /* disable */
     cursor: not-allowed;
@@ -186,7 +196,7 @@
     left: 20px;
     height: 50px;
     width: 50px;
-    transition: 0.1s ease-in-out;
+    transition: 10ms ease-in-out;
 }
 
 #lll-smart-menu>img {
@@ -197,22 +207,27 @@
 
 #lll-smart-menu>.main {
     max-height: inherit;
+    padding-bottom: 10px;
 }
-#lll-smart-menu > div > header{
+
+#lll-smart-menu>div>header {
     font-size: x-large;
 }
-#lll-smart-menu > div > header > mtitle{
+
+#lll-smart-menu>div>header>mtitle {
     height: inherit;
     width: calc(100% - 77px);
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
-#lll-smart-menu > div > header > nav > div{
+
+#lll-smart-menu>div>header>nav>div {
     height: 28px;
     width: 18px;
     margin-right: -2px;
 }
+
 .lightele {
     /* light_element */
     display: inline-block;
@@ -231,7 +246,6 @@
 
 .lightboxW {
     /* lightboxW(lightbox_white) */
-    display: inline-block;
     width: auto;
     background: white;
     padding: 5px;
@@ -270,7 +284,6 @@
 
 .lightboxB:hover {
     box-shadow: 0px 3px 5px 0px rgb(0 0 0 / 30%);
-    transform: scale(1.05);
 }
 
 .lightboxDM {
@@ -284,7 +297,6 @@
 }
 
 .lightboxDM:hover {
-    transform: scale(1.1);
     box-shadow: 0px 10px 15px 0px rgba(255, 0, 255, 0.8);
 }
 
@@ -318,7 +330,6 @@
 .lll-item-lister-place {
     position: fixed;
     top: 0;
-    display: none;
 }
 
 .lll-item-lister {
@@ -5856,6 +5867,10 @@ oel>li::after {
 
 .dis-inline {
     display: inline;
+}
+
+.dis-inlineB {
+    display: inline-block;
 }
 
 .dis-none {
