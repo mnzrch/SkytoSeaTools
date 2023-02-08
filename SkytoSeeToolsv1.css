@@ -197,6 +197,7 @@ linebreak {
     height: 50px;
     width: 50px;
     transition: 10ms ease-in-out;
+    border-radius: 10px;
 }
 
 #lll-smart-menu>img {

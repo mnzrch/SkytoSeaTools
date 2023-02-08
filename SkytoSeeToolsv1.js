@@ -52,7 +52,7 @@ const scripts = () => {
         }, mini);
         click(function () {
             lllsm.remove();
-            setCoki('lll_smart_menu', '0', { 'expire': '31104000' });
+            setCoki('lll_smart_menu', '0', { 'max-age': '31104000' });
         }, close);
     }
     //---------------------------------------------------------------------------
