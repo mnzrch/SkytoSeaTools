@@ -7,7 +7,7 @@ let assestdir;
 if (window.location.protocol == 'file:') {
     assestdir = 'file:///C:/Users/mnzrc/Desktop/SkytoSeaTools/assests'
 } else {
-    assestdir = 'https://mnzrch.github.io/SkytoSeeTools/assests'
+    assestdir = 'https://mnzrch.github.io/SkytoSeaTools/assests'
 };
 function $(x) {
     return document.querySelector(x);
