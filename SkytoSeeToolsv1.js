@@ -101,7 +101,9 @@ const scripts = () => {
         });
         let mmdp = $('#lll-smart-menu > div > dbody');
         if (mmdp && getCSS('display', ele) == 'none') {
-            clog(mmdp);
+            if (!mmdp) {
+                console.error('Element not found: #lll-smart-menu > div > dbody');
+            }
             mmdp.appendChild(myele);
             click(function () {
                 setCSS('display', 'unset', ele);
