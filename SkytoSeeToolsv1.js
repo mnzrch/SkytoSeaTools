@@ -81,7 +81,7 @@ const scripts = () => {
             let mmdp = $('#lll-smart-menu > div > dbody');
             clog(mmdp);
             if (mmdp) {
-                mmdp.appendChild(myele);
+                mmdp[0].appendChild(myele);
             }
         }
         $cls('lll-listed-item').forEach((ele) => {
@@ -101,10 +101,7 @@ const scripts = () => {
         });
         let mmdp = $('#lll-smart-menu > div > dbody');
         if (mmdp && getCSS('display', ele) == 'none') {
-            if (!mmdp) {
-                console.error('Element not found: #lll-smart-menu > div > dbody');
-            }
-            mmdp.appendChild(myele);
+            mmdp[0].appendChild(myele);
             click(function () {
                 setCSS('display', 'unset', ele);
                 myele.remove();
