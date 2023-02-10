@@ -3,10 +3,12 @@ Advance HTML codes...
 
 Add below code at first in <head> tag after web-information...
 
-  <script src="file:///C:/Users/Mc/Desktop/SkytoSeeTool/stsheader.js"></script>
+      <script src="location/SkytoSeaTools/stsTH.js"></script>
+      <link rel="stylesheet" href="location/SkytoSeaTools/SkytoSeaTools.css">
 
   <!--
-       <script src="https://mnzrch.github.io/SkytoSeeTool/stsheader.js"></script>
+       <script src="https://mnzrch.github.io/SkytoSeaTool/stsTH.js"></script>
+      <link rel="stylesheet" href="https://mnzrch.github.io/SkytoSeaTool/SkytoSeaTools.css">
                                                                                    -->
 
 =============================================================================================================
@@ -71,21 +73,12 @@ Add below code at first in <head> tag after web-information...
 
 
 
-     <!--For ⚙ Tools-->
-<div id="webtool-place" class="null"></div>   
 
 
 
-
-  <link rel="stylesheet" href="file:///C:/Users/Mc/Desktop/SkytoSeeTool/SkytoSeeToolsv1.css">
-  <link rel="stylesheet" href="file:///C:/Users/Mc/Desktop/SkytoSeeTool/Tools/3l-ist.css">
-  <script src="file:///C:/Users/Mc/Desktop/SkytoSeeTool/SkytoSeeToolsv1.js"></script>
-  <script src="file:///C:/Users/Mc/Desktop/SkytoSeeTool/Tools/tools fetcher.js"></script>
+  <script src="location/SkytoSeaTools/SkytoSeaTools.js"></script>
 
 
   <!-- 
-      <link rel="stylesheet" href="https://mnzrch.github.io/SkytoSeeTool/SkytoSeeToolsv1.css">
-      <link rel="stylesheet" href="https://mnzrch.github.io/SkytoSeeTool/Tools/3l-ist.css">
-      <script src="https://mnzrch.github.io/SkytoSeeTool/SkytoSeeToolsv1.js"></script>
-      <script src="https://mnzrch.github.io/SkytoSeeTool/Tools/tools fetcher.js"></script>
+      <script src="https://mnzrch.github.io/SkytoSeaTool/SkytoSeaTools.js"></script>
                                                                                              -->

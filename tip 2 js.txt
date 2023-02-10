@@ -3,10 +3,10 @@ Advance JavaScript codes...
 
 Add below code at first in <head> tag after web-information...
 
-  <script src="file:///C:/Users/Mc/Desktop/SkytoSeeTool/stsHT.js"></script>
+  <script src="location/SkytoSeaTools/stsHT.js"></script>
 
   <!--
-       <script src="https://mnzrch.github.io/SkytoSeeTool/stsHT.js"></script>
+       <script src="https://mnzrch.github.io/SkytoSeaTool/stsHT.js"></script>
                                                                                    -->
 
 =============================================================================================================
