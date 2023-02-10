@@ -69,7 +69,6 @@ function newEle(cnt, e) {
         let ne = document.createElement(e);
         if (cnt) {
             ne.innerHTML = cnt;
-            return ne;
         }
         return ne;
     }
