@@ -1,5 +1,8 @@
 // Scripts...
-console.log('stsTH Loaded successfully!');
+function clog(s) {
+    return console.log(s);
+};
+clog('stsTH Loaded successfully!');
 let assestdir;
 if (window.location.protocol == 'file:') {
     assestdir = 'file:///C:/Users/mnzrc/Desktop/SkytoSeeTool/assests'
@@ -69,6 +72,7 @@ function newEle(cnt, e) {
         let ne = document.createElement(e);
         if (cnt) {
             ne.innerHTML = cnt;
+            return ne;
         }
         return ne;
     }
@@ -131,3 +135,32 @@ async function clipboardpast(ele) {
         ele.value = clpD;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
