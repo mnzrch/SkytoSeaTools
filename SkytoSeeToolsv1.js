@@ -80,6 +80,8 @@ const scripts = () => {
             setCSS('display', 'none', ele);
             let mmdp = $('#lll-smart-menu > div > dbody');
             if (mmdp) {
+                let myele = newEle('Listed Items', 'div');
+                setAttr('class', 'lightboxWS dis-inlineB cursor-pointer', myele);
                 mmdp.appendChild(myele);
             }
         }
