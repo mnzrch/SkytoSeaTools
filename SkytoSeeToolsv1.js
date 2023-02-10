@@ -26,12 +26,12 @@ const scripts = () => {
         html('<img title="Double Click to open Smart Menu by Letslearnlights" alt="Menu" src="' + assestdir + '/menu.svg"><div class="main null fd-column"> <header class="dis-flex ai-center"> <mtitle title="' + mtitle + '" class="drager">' + mtitle + '</mtitle> <nav> <div class="btnv3"> <span style="position: relative;font-weight: bold;-webkit-text-stroke: thick;">–</span> </div> <div class="btnv3 htmlcross"></div> </nav> </header> <linebreak></linebreak> <dbody class="relative top-7 of-auto"></dbody> </div>', lllsm);
         clog('lll_smart_menu Enabled');
         // return;
-        let smenu = tag('#lll-smart-menu>img');
+        let hmenu = tag('#lll-smart-menu>img');
         let mmenu = tag('#lll-smart-menu>.main');
         let mini = tag('#lll-smart-menu > div > header > nav > div:nth-child(1)');
         let close = tag('#lll-smart-menu > div > header > nav > div:nth-child(2)');
         dclick(function () {
-            setCSS('display', 'none', smenu);
+            setCSS('display', 'none', hmenu);
             setCSS('display', 'flex', mmenu);
             function lll_menuH() {
                 setCSS('max-height', winh() - (winh() / 100) * 5 - 30 + 'px', mmenu);
@@ -41,18 +41,20 @@ const scripts = () => {
                 lll_menuH();
             }
             setClass('lightboxLG', mmenu);
+            setAttr('dfstyle', getAttr('style', lllsm), lllsm);
             $setCSS({
                 'width': 'fit-content', 'maxWidth': '95%', 'height': 'fit-content', 'max-height': '95%', 'left': '50%', 'transform': 'translate(-50%, -50%)', 'top': '50%'
             }, lllsm);
-        }, smenu);
+            setCoki('lll_smart_menu', '1', { 'max-age': '31104000' });
+        }, hmenu);
         click(function () {
-            setCSS('display', 'unset', smenu);
+            setCSS('display', 'unset', hmenu);
             setCSS('display', 'none', mmenu);
-            setAttr('style', '', lllsm);
+            setAttr('style', getAttr('dfstyle', lllsm), lllsm);
         }, mini);
         click(function () {
-            lllsm.remove();
             setCoki('lll_smart_menu', '0', { 'max-age': '31104000' });
+            lllsm.remove();
         }, close);
     }
     //---------------------------------------------------------------------------
