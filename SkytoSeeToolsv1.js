@@ -30,7 +30,7 @@ const scripts = () => {
         let mmenu = $('#lll-smart-menu>.main');
         let mini = $('#lll-smart-menu > div > header > nav > div:nth-child(1)');
         let close = $('#lll-smart-menu > div > header > nav > div:nth-child(2)');
-        dclick(function () {
+        click(function () {
             setCSS('display', 'none', smenu);
             setCSS('display', 'flex', mmenu);
             function lll_menuH() {
