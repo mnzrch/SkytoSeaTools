@@ -52,16 +52,18 @@ const scripts = () => {
             setCSS('display', 'none', mmenu);
             setAttr('style', getAttr('dfstyle', lllsm), lllsm);
         }, mini);
-        // click(function () {
-        //     setCoki('lll_smart_menu', '0', { 'max-age': '31104000' });
-        //     lllsm.remove();
-        // }, close);
+        click(function () {
+            setCoki('lll_smart_menu', '0', { 'max-age': '31104000' });
+            lllsm.remove();
+        }, close);
     }
     //---------------------------------------------------------------------------
-    // Custom item_lister
+    // Custom_item_lister
     let lll_lister_index = 0;
     $cls('lll-item-lister-place').forEach((ele) => {
+        clog(getAttr('remember', ele));
         if (getCoki('lll_lister') == 0 && getAttr('remember', ele)) {
+            clog('Custom_item_lister is enabled but Minimized');
             setCSS('display', 'none', ele);
         };
         lll_lister_index++;
