@@ -60,7 +60,8 @@ const scripts = () => {
     let lll_lister_index = 0;
     $cls('lll-item-lister-place').forEach((ele) => {
         lll_lister_index++;
-        let myele = newEle('Listed Items', 'div');
+        let myele = newEle('div');
+        html('Listed Items', myele);
         setAttr('class', 'lightboxWS dis-inlineB cursor-pointer', myele);
         function lll_listerH() {
             setCSS('height', winh() - 20 + 'px', ele);
