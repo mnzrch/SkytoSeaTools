@@ -79,7 +79,7 @@ const scripts = () => {
         document.querySelector(".lll-item-lister-" + lll_lister_index + ">.header>#close").onclick = function () {
             setCSS('display', 'none', ele);
             let mmdp = $('#lll-smart-menu > div > dbody');
-            alert(mmdp);
+            clog(mmdp);
             if (mmdp) {
                 mmdp.appendChild(myele);
             }
@@ -101,6 +101,7 @@ const scripts = () => {
         });
         let mmdp = $('#lll-smart-menu > div > dbody');
         if (mmdp && getCSS('display', ele) == 'none') {
+            clog(mmdp);
             mmdp.appendChild(myele);
             click(function () {
                 setCSS('display', 'unset', ele);
