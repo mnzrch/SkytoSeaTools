@@ -15,19 +15,19 @@
      -->
 </head>
 
-<body class="margin-0">
+<body class="margin-0" id="body">
 
-     <div class="reload fix btnv3 right-10 bottom-10" style="z-index:
-               11000;">Reload</div>
+     <div class="reload fix btnv3 right-10 bottom-10" style="z-index:11000;">Reload</div>
+     <div class="toparrow btnv3 right" jumpto="body"></div>
 
-     <style>
-          /* custom css */
-     </style>
+     <!-- <style>
+     </style> -->
 
-     <div class="lll-item-lister-place left" name="Content table"></div>
-
+     <div id="lll-smart-menu" class="dragable" style="z-index: 100;"></div>
+     <div class="lll-item-lister-place left dragable dis-none" name="Content table and list of items"></div>
      <div>
-          <h2 id="first h2" class="lll-listed-item">First h2</h2>
+          <h2 id="First h2First h2First h2First h2First h" class="lll-listed-item">First h2First h2First h2First h2First
+               h2</h2>
           <h2 id="secont h2" name="This is Second" class="lll-listed-item">First h2</h2>
           <h2 id="third h2" class="lll-listed-item">First h2</h2>
           <h2 id="first h2" class="lll-listed-item">First h2</h2>
@@ -52,7 +52,7 @@
           <h2 id="secont h2" name="This is Second" class="lll-listed-item">First h2</h2>
           <h2 id="third h2" class="lll-listed-item">First h2</h2>
           <h2 id="first h2" class="lll-listed-item">First h2</h2>
-          <h2 id="secont h2" name="This is Second" class="lll-listed-item">First h2</h2>
+          <h2 id="second-h2" name="This is Second" class="lll-listed-item">First h2</h2>
           <h2 id="third h2" class="lll-listed-item">First h2</h2>
           <h2 id="first h2" class="lll-listed-item">First h2</h2>
           <h2 id="secont h2" name="This is Second" class="lll-listed-item">First h2</h2>
@@ -93,9 +93,86 @@
      </div>
 
 
-     <!-- <div class="content-list"
-          name="Download s02 ep01 Download s02 ep01 Download s02 ep01 Download s02 ep01 Download s02 ep01"
-          mode="closed"
+     <script>
+          // alert(id('second-h2'));
+     </script>
+     <!-- <style>
+          .alert-box {
+               width: 400px;
+               height: 200px;
+               background-color: #fff;
+               border: 1px solid #ccc;
+               border-radius: 10px;
+               box-shadow: 0px 0px 10px #ccc;
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+               display: flex;
+               flex-direction: column;
+          }
+
+          .alert-header {
+               background-color: #f1f1f1;
+               border-bottom: 1px solid #ccc;
+               padding: 10px;
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+          }
+
+          .title {
+               font-size: 20px;
+               font-weight: bold;
+          }
+
+          .close-button {
+               background-color: transparent;
+               border: none;
+               font-size: 18px;
+               cursor: pointer;
+          }
+
+          .alert-body {
+               padding: 20px;
+               font-size: 16px;
+          }
+
+          .alert-footer {
+               background-color: #f1f1f1;
+               border-top: 1px solid #ccc;
+               padding: 10px;
+               display: flex;
+               justify-content: center;
+          }
+
+          .alert-button {
+               background-color: #4CAF50;
+               color: #fff;
+               border: none;
+               padding: 10px 20px;
+               border-radius: 5px;
+               cursor: pointer;
+          }
+     </style>
+     <div class="alert-box">
+          <div class="alert-header">
+               <span class="title">Alert</span>
+               <button class="close-button">×</button>
+          </div>
+          <div class="alert-body">
+               <p>This is a custom alert box</p>
+          </div>
+          <div class="alert-footer">
+               <button class="alert-button">OK</button>
+          </div>
+     </div> -->
+
+
+     <div class="toparrow btnv3 right" jumpto="second-h2"></div>
+     <!--
+     <div class="content-list"
+          name="Download s02 ep01 Download s02 ep01 Download s02 ep01 Download s02 ep01 Download s02 ep01" mode="closed"
           content-bg="white">
           <div>vyjgkgjjg,vj</div>
           <p>vyjgkgjjg,vj</p>
@@ -103,7 +180,6 @@
           <button>Download s02 ep01</button>
           <blockquote>vyjgkgjjg,vj</blockquote>
      </div>
-
      <div class="news-list-wrap">
           <div class="news-list">
                <div class="courseitm btn-url" title="Get Started." url="https://passwordsgenerator.net/">

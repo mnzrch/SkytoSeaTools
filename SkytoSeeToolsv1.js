@@ -14,9 +14,9 @@ const scripts = () => {
     // lll_smart_menu
     const lllsm = id('lll-smart-menu');
     if (lllsm) {
-        if (getCoki('lll_smart_menu') == 0) {
-            setCSS('display', 'none', lllsm);
-        };
+        // if (getCoki('lll_smart_menu') == 0 && getAttr('remember', lllsm)) {
+        //     setCSS('display', 'none', lllsm);
+        // };
         let mtitle;
         if (getAttr('name', lllsm)) {
             mtitle = getAttr('name', lllsm);
@@ -52,15 +52,18 @@ const scripts = () => {
             setCSS('display', 'none', mmenu);
             setAttr('style', getAttr('dfstyle', lllsm), lllsm);
         }, mini);
-        click(function () {
-            setCoki('lll_smart_menu', '0', { 'max-age': '31104000' });
-            lllsm.remove();
-        }, close);
+        // click(function () {
+        //     setCoki('lll_smart_menu', '0', { 'max-age': '31104000' });
+        //     lllsm.remove();
+        // }, close);
     }
     //---------------------------------------------------------------------------
     // Custom item_lister
     let lll_lister_index = 0;
     $cls('lll-item-lister-place').forEach((ele) => {
+        if (getCoki('lll_lister') == 0 && getAttr('remember', ele)) {
+            setCSS('display', 'none', ele);
+        };
         lll_lister_index++;
         let myele = newEle('Listed Items', 'div');
         setAttr('class', 'lightboxWS dis-inlineB cursor-pointer', myele);
@@ -78,7 +81,8 @@ const scripts = () => {
             titlediv = 'Auto Generated List';
         }
         html('<div class="lll-item-lister-' + lll_lister_index + ' lll-item-lister of-hidden h-inherit w-wfa lightboxW"> <div class="header dis-flex w-wfa bg-gray padding-2 jc-spacebetween"> <span id="title" class="margin-2 lightele w-wfa drager"><div class="relative" title="' + titlediv + '">' + titlediv + '</div></span> <span id="close" title="Click to close it!" class="btnv3 htmlcross"></span> </div> <div class="items dis-flex ai-center fd-column of-auto"></div> </div>', ele);
-        document.querySelector(".lll-item-lister-" + lll_lister_index + ">.header>#close").onclick = function () {
+        tag(".lll-item-lister-" + lll_lister_index + ">.header>#close").onclick = function () {
+            setCoki('lll_lister', '0', { 'max-age': '31104000' });
             setCSS('display', 'none', ele);
             let mmdp = tag('#lll-smart-menu > div > dbody');
             if (mmdp) {
@@ -98,13 +102,14 @@ const scripts = () => {
                 setAttr('class', 'item', newele);
             }
             setAttr('href', '#' + getAttr('id', ele) + '', newele);
-            document.querySelector(".lll-item-lister-" + lll_lister_index + ">.items").appendChild(newele);
+            tag(".lll-item-lister-" + lll_lister_index + ">.items").appendChild(newele);
         });
         let mmdp = tag('#lll-smart-menu > div > dbody');
         if (mmdp && getCSS('display', ele) == 'none') {
             mmdp.appendChild(myele);
             click(function () {
                 setCSS('display', 'unset', ele);
+                setCoki('lll_lister', '1', { 'max-age': '31104000' });
                 myele.remove();
             }, myele);
         }

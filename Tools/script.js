@@ -29,3 +29,18 @@ function lll_ctrlpnl() {
     }
 };
 lll_ctrlpnl();
+//---------------------------------------------------------------------------
+// News br list
+if (cls('news-list-wrap') != null) {
+    let clist = document.getElementsByClassName('news-list-wrap');
+    Array.prototype.forEach.call(clist, (element) => {
+        let close = document.createElement('div');
+        close.setAttribute('id', 'closenl');
+        close.innerHTML = 'Close';
+        close.style.marginTop = -(element.clientHeight + 18) + 'px';
+        element.appendChild(close);
+        close.onclick = function () {
+            element.remove();
+        }
+    })
+}
