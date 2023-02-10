@@ -24,13 +24,13 @@ const scripts = () => {
             mtitle = 'Smart Menu';
         }
         html('<img title="Double Click to open Smart Menu by Letslearnlights" alt="Menu" src="' + assestdir + '/menu.svg"><div class="main null fd-column"> <header class="dis-flex ai-center"> <mtitle title="' + mtitle + '" class="drager">' + mtitle + '</mtitle> <nav> <div class="btnv3"> <span style="position: relative;font-weight: bold;-webkit-text-stroke: thick;">–</span> </div> <div class="btnv3 htmlcross"></div> </nav> </header> <linebreak></linebreak> <dbody class="relative top-7 of-auto"></dbody> </div>', lllsm);
-        console.log('lll_smart_menu Enabled');
+        clog('lll_smart_menu Enabled');
         // return;
-        let smenu = $('#lll-smart-menu>img');
-        let mmenu = $('#lll-smart-menu>.main');
-        let mini = $('#lll-smart-menu > div > header > nav > div:nth-child(1)');
-        let close = $('#lll-smart-menu > div > header > nav > div:nth-child(2)');
-        click(function () {
+        let smenu = tag('#lll-smart-menu>img');
+        let mmenu = tag('#lll-smart-menu>.main');
+        let mini = tag('#lll-smart-menu > div > header > nav > div:nth-child(1)');
+        let close = tag('#lll-smart-menu > div > header > nav > div:nth-child(2)');
+        dclick(function () {
             setCSS('display', 'none', smenu);
             setCSS('display', 'flex', mmenu);
             function lll_menuH() {
@@ -78,10 +78,9 @@ const scripts = () => {
         html('<div class="lll-item-lister-' + lll_lister_index + ' lll-item-lister of-hidden h-inherit w-wfa lightboxW"> <div class="header dis-flex w-wfa bg-gray padding-2 jc-spacebetween"> <span id="title" class="margin-2 lightele w-wfa drager"><div class="relative" title="' + titlediv + '">' + titlediv + '</div></span> <span id="close" title="Click to close it!" class="btnv3 htmlcross"></span> </div> <div class="items dis-flex ai-center fd-column of-auto"></div> </div>', ele);
         document.querySelector(".lll-item-lister-" + lll_lister_index + ">.header>#close").onclick = function () {
             setCSS('display', 'none', ele);
-            let mmdp = $('#lll-smart-menu > div > dbody');
-            clog(mmdp);
+            let mmdp = tag('#lll-smart-menu > div > dbody');
             if (mmdp) {
-                mmdp[0].appendChild(myele);
+                mmdp.appendChild(myele);
             }
         }
         $cls('lll-listed-item').forEach((ele) => {
@@ -99,9 +98,9 @@ const scripts = () => {
             setAttr('href', '#' + getAttr('id', ele) + '', newele);
             document.querySelector(".lll-item-lister-" + lll_lister_index + ">.items").appendChild(newele);
         });
-        let mmdp = $('#lll-smart-menu > div > dbody');
+        let mmdp = tag('#lll-smart-menu > div > dbody');
         if (mmdp && getCSS('display', ele) == 'none') {
-            mmdp[0].appendChild(myele);
+            mmdp.appendChild(myele);
             click(function () {
                 setCSS('display', 'unset', ele);
                 myele.remove();
