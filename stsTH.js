@@ -27,8 +27,8 @@ function id(z) {
 function $id(z) {
     return document.querySelectorAll('#' + z);
 }
-function getAttr(atr, ele) {
-    return ele.hasAttribute(atr) ? ele.getAttribute(atr) : undefined;
+function getAttr(atr, e) {
+    if (e.hasAttribute(atr)) { let v = e.getAttribute(atr); if (v == '') { return 'defined&null' } else { return v } } else { return undefined };
 }
 function setAttr(atr, atrval, e) {
     if (e instanceof Node) {
