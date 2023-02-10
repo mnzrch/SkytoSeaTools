@@ -61,11 +61,7 @@ const scripts = () => {
     // Custom_item_lister
     let lll_lister_index = 0;
     $cls('lll-item-lister-place').forEach((ele) => {
-        if (getAttr('remember', ele)) {
-            clog('Custom_item_lister is Remembered');
-        };
-        if (getCoki('lll_lister') == 0 && getAttr('remember', ele) == '') {
-            clog('Custom_item_lister is enabled but Minimized');
+        if (getCoki('lll_lister') == 0 && getAttr('remember', ele)) {
             setCSS('display', 'none', ele);
         };
         lll_lister_index++;
