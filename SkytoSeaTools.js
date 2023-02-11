@@ -62,6 +62,7 @@ const scripts = () => {
     let lll_lister_index = 0;
     $cls('lll-item-lister-place').forEach((ele) => {
         if (getCoki('lll_lister') == 0 && getAttr('remember', ele)) {
+            clog('lll_lister Enabled with Minimized Mod');
             setCSS('display', 'none', ele);
         };
         lll_lister_index++;
