@@ -220,11 +220,11 @@ const scripts = () => {
     //---------------------------------------------------------------------------
     // Custom checkbox
     $cls('checkbox').forEach((e) => {
-        // let v = e.getAttr('value');
+        setCSS('cursor', 'pointer', e);if(getAttr('title',e)=='Please wait, Item is being loaded!'){setAttr('title', 'Click to check/uncheck', e)};
         if (getAttr('value', e) == 'checked') {
             html('<span style="position: relative;top: -4px;right: -2px;">✓</span>', e)
         };
-        click(function(){if(e.innerHTML==''){html('<span style="position: relative;top: -4px;right: -2px;">✓</span>', e);setAttr('value','1', e)}else{html('', e);setAttr('value','0', e)}},e)
+        click(function () { if (e.innerHTML == '') { html('<span style="position: relative;top: -4px;right: -2px;">✓</span>', e); setAttr('value', '1', e) } else { html('', e); setAttr('value', '0', e) } }, e)
     });
     // dragger
     const dragElements = $cls("dragable");
