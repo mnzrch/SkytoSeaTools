@@ -241,6 +241,18 @@ linebreak {
     transition: linear .3s;
 }
 
+.checkbox{
+    display: inline-block;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    margin: 3px;
+    outline: 1px inset gray;
+}
+
 .lightele:hover {
     box-shadow: 1px 1px 4px #33333382, inset 0px 0px 2px #0000005d;
 }

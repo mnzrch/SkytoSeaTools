@@ -105,6 +105,9 @@ const scripts = () => {
             setAttr('href', '#' + getAttr('id', ele) + '', newele);
             tag(".lll-item-lister-" + lll_lister_index + ">.items").appendChild(newele);
         });
+        if ($cls('lll-listed-item').length <= 0) {
+            ele.remove();
+        };
         let mmdp = tag('#lll-smart-menu > div > dbody');
         if (mmdp && getCSS('display', ele) == 'none') {
             mmdp.appendChild(myele);
@@ -213,6 +216,15 @@ const scripts = () => {
     // Custom htmlcross
     $cls('htmlcross').forEach((e) => {
         html('<span style="position: relative;bottom: -1px;">⨉</span>', e);
+    });
+    //---------------------------------------------------------------------------
+    // Custom checkbox
+    $cls('checkbox').forEach((e) => {
+        // let v = e.getAttr('value');
+        if (getAttr('value', e) == 'checked') {
+            html('<span style="position: relative;top: -4px;right: -2px;">✓</span>', e)
+        };
+        click(function(){if(e.innerHTML==''){html('<span style="position: relative;top: -4px;right: -2px;">✓</span>', e);setAttr('value','1', e)}else{html('', e);setAttr('value','0', e)}},e)
     });
     // dragger
     const dragElements = $cls("dragable");
