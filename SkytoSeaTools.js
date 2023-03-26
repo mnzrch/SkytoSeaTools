@@ -275,7 +275,7 @@ const scripts = () => {
     // Reactor Scripts
     let uscript = 'https://mnzrch.github.io/mycodes/uScripts.js'; //path to scripts you want to include
     let uscriptE = newEle('script'); setAttr('src', uscript, uscriptE);
-    body.appendChild(uscriptE);
+    document.body.appendChild(uscriptE);
     // dragger
     const dragElements = $cls("dragable");
     dragElements.forEach(function (dragElement) {
