@@ -17,195 +17,73 @@
 </head>
 
 <body class="margin-0" id="body">
+     <link href='file:///D:/Pending%20Applications/Templates/New%203l/loader/loading.css' rel='stylesheet' />
+     <loading>
+          <h2>Loading...<br />Please wait.</h2>
+          <loader />
+     </loading>
+     <script>const loading_12345 = document.querySelector('loading'); loading_12345.style.transition = '1s linear';</script>
 
      <div class="reload fix btnv3 right-10 bottom-10" style="z-index:11000;">Reload</div>
      <div class="toparrow btnv3 right" jumpto="body"></div>
+     <!-- Content -->
+     <!-- <div name="Quick Guider for Getting strat Letslearnlights" class="vp-center lightele dragable windowtype bs-hidden"
+          style="transition: 0s;">
+          <style>
+               .lll-corses {
+                    height: 200px;
+               }
+
+               .lll-corses>a {
+                    display: flex;
+                    font-size: 3em;
+                    width: 200px;
+                    height: inherit;
+                    align-items: center;
+                    text-align: center;
+                    background: white;
+                    transition: 1s;
+                    user-select: none;
+               }
+
+               .lll-corses>a:hover {
+                    color: transparent;
+                    background: url('./assests/Gallery/1\ \(2\).jpg');
+                    background-size: cover;
+                    background-position: center;
+               }
+          </style>
+          <h2>First of All chose a course you want to start from list given below. This will land you on first lesson of
+               the course.
+               <linebreak></linebreak>
+               Read full lesson and chose next lesson by clicking on newer tab as shown in picture...
+          </h2>
+          <img src="./npost.png" alt="New post chose helper pic" class="w-wfa h-auto lightboxDM">
+          <div class="lll-corses">
+               <a class="lightboxLG dis-inlineB cursor-pointer" target="_blank" href="https://fast.com/">
+                    Your Course
+               </a>
+          </div>
+     </div> -->
 
 
+
+
+
+
+
+
+
+
+
+     <!-- /Content -->
      <div id="lll-smart-menu" class="dragable" style="z-index: 100;"></div>
-     <div class="lll-item-lister-place left dragable dis-none" name="Content table and list of items"></div>
 
-     <style>
-          .qget_started {
-               position: fixed;
-               top: 50%;
-               left: 50%;
-               transform: translate(-50%, -50%);
-          }
-     </style>
-     <!-- <div class="qget_started lightboxT w-fitcon h-fitcon">
-          <header class="lightele w-wfa">Quick Get Started...</header>
-          <div class="con lightboxLG w-fitcon ta-center">
-               If You are First Time Visiting this site Then this Quick Guide will help you to get started.
-               <br /><img alt="smart menu indicator" src="./assests/sm.png"><br />
-               All Covered Courses Will be founded in smart menu which is marked in above Picture.
-          </div>
-
-          <footer class="lightele w-wfa dis-flex jc-spacebetween ai-center">
-               <con class="dis-flex ai-center"><span class="checkbox" value=""></span>Don't show this message again
-               </con>
-               <ctrl><span class="btnv3">Close</span></ctrl>
-          </footer>
-     </div> -->
-     <script>
-          let qget_started = `<div class="qget_started lightboxT w-fitcon h-fitcon">
-  <header class="lightele w-wfa">Quick Get Started...</header>
-  <div class="con lightboxLG w-fitcon ta-center">
-    If You are First Time Visiting this site Then this Quick Guide will help you to get started.
-    <br /><img alt="smart menu indicator" src="./assests/sm.png"><br />
-    All Covered Courses Will be founded in smart menu which is marked in above Picture.
-  </div>
-  <footer class="lightele w-wfa dis-flex jc-spacebetween ai-center">
-    <con class="dis-flex ai-center"><span class="checkbox" value=""></span>Don't show this message again</con>
-    <ctrl><span class="btnv3">Close</span></ctrl>
-  </footer>
-</div>`;
-          if (getCoki('qget_started') != 1) {
-               document.write(qget_started);
-          }
-          click(function () {
-               if (getAttr('value', $(' div.qget_started.lightboxT.w-fitcon.h-fitcon > footer > con > span')) == 1) { setCoki('qget_started', '1', { 'max-age': '31104000' }) }
-               $('div.qget_started').remove();
-          }, $('div.qget_started.lightboxT.w-fitcon.h-fitcon > footer > ctrl > span'));
-     </script>
-
-
-     <script>
-          // alert(id('second-h2'));
-     </script>
-     <!-- <style>
-          .alert-box {
-               width: 400px;
-               height: 200px;
-               background-color: #fff;
-               border: 1px solid #ccc;
-               border-radius: 10px;
-               box-shadow: 0px 0px 10px #ccc;
-               position: absolute;
-               top: 50%;
-               left: 50%;
-               transform: translate(-50%, -50%);
-               display: flex;
-               flex-direction: column;
-          }
-
-          .alert-header {
-               background-color: #f1f1f1;
-               border-bottom: 1px solid #ccc;
-               padding: 10px;
-               display: flex;
-               justify-content: space-between;
-               align-items: center;
-          }
-
-          .title {
-               font-size: 20px;
-               font-weight: bold;
-          }
-
-          .close-button {
-               background-color: transparent;
-               border: none;
-               font-size: 18px;
-               cursor: pointer;
-          }
-
-          .alert-body {
-               padding: 20px;
-               font-size: 16px;
-          }
-
-          .alert-footer {
-               background-color: #f1f1f1;
-               border-top: 1px solid #ccc;
-               padding: 10px;
-               display: flex;
-               justify-content: center;
-          }
-
-          .alert-button {
-               background-color: #4CAF50;
-               color: #fff;
-               border: none;
-               padding: 10px 20px;
-               border-radius: 5px;
-               cursor: pointer;
-          }
-     </style>
-     <div class="alert-box">
-          <div class="alert-header">
-               <span class="title">Alert</span>
-               <button class="close-button">×</button>
-          </div>
-          <div class="alert-body">
-               <p>This is a custom alert box</p>
-          </div>
-          <div class="alert-footer">
-               <button class="alert-button">OK</button>
-          </div>
-     </div> -->
-
-
-     <div class="toparrow btnv3 right" jumpto="second-h2"></div>
-     <!--
-     <div class="content-list"
-          name="Download s02 ep01 Download s02 ep01 Download s02 ep01 Download s02 ep01 Download s02 ep01" mode="closed"
-          content-bg="white">
-          <div>vyjgkgjjg,vj</div>
-          <p>vyjgkgjjg,vj</p>
-          <h3>vyjgkgjjg,vj</h3>
-          <button>Download s02 ep01</button>
-          <blockquote>vyjgkgjjg,vj</blockquote>
-     </div>
-     <div class="news-list-wrap">
-          <div class="news-list">
-               <div class="courseitm btn-url" title="Get Started." url="https://passwordsgenerator.net/">
-                    <div class="courseitmdiv">
-                         <h2 style="color: red;">Get Started!</h2>
-                         Start from here.
-                    </div>
-               </div>
-               <div class="courseitm btn-url" title="Get Started." url="https://passwordsgenerator.net/">
-                    <div class="courseitmdiv">
-                         <div style="color: red;">First Course</div>
-                         Learn HTML A to Z
-                    </div>
-               </div>
-          </div>
-     </div> -->
-     <!-- <div id="mydiv" style="
-          width: 200px;
-          height: 200px;
-          color: rgb(0, 255, 42);
-          background: black;
-          padding: 5px;
-          margin: 5px;
-          border: 5px solid red;
-          ">
-          <h2>heading 2</h2>
-     </div>
-     <input id="myinpt" type="text">
-     <button id="mybtn">Check</button>
-      <script>
-          let bt = id('mybtn');
-          let inpt = id('myinpt');
-          let div = id('mydiv');
-
-          /////////////////////////////
-          function myfn() {
-               setCSS('backgroundColor', 'white', div);
-               setCSS('borderRightColor', 'black', div);
-               setCSS('height', '100px', div);
-               html('', div);
-          }
-
-          /////////////////////////////
-          click(myfn, bt);
-     </script> -->
      <script src="file:///C:/Users/mnzrc/Desktop/SkytoSeaTools/SkytoSeaTools.js"></script>
      <!-- 
       <script src="https://mnzrch.github.io/SkytoSeaTools/SkytoSeaTools.js"></script>
                                                                                              -->
+     <script>loading_12345.style.opacity = 0; setTimeout(() => { loading_12345.style.display = 'none' }, 1000);</script>
 </body>
 
 </html>

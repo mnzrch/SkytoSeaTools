@@ -1,10 +1,66 @@
 /* quick css */
 ::border_style ::bg_color ::height ::margin ::top ::right ::bottom ::left ::padding ::width ::colors ::float ::visibility ::overflow ::display ::cursor ::position ::flex_direction ::justify_content ::align_content ::align_item ::text_align ::fonts
 /* Special Elements */
-::btnv1 ::btnv2 ::disable ::null ::inputv1 ::light_element ::lightboxW(lightbox_white) ::lightboxWS(white_smooth) ::lightboxT(turquoise) ::lightboxLG(lightgray) ::lightboxB(blue) ::lightboxDM(darkmagenta) ::linebreak
+::vp_center ::btnv1 ::btnv2 ::btnv3 ::disable ::null ::inputv1 ::light_element ::lightboxW(lightbox_white) ::lightboxWS(white_smooth) ::lightboxT(turquoise) ::lightboxLG(lightgray) ::lightboxB(blue) ::lightboxDM(darkmagenta) ::linebreak
 /* Tools */
 ::item_lister
+
 /* Add name of style in any HTML tag's attribute */
+body {
+    font: default;
+}
+
+.vp-center {
+    /* vp_center */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.windowtype {
+    max-width: calc(100% - 5vw);
+    max-height: calc(100% - 5vh);
+    border: 1px solid black;
+}
+
+.windowtype>.window-bar {
+    font-size: 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(1.5em + 10px);
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.windowtype>.window-bar>.title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+}
+
+.windowtype>.window-bar>.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.windowtype>.window-bar>.buttons>.minimize-button,
+.windowtype>.window-bar>.buttons>.close-button {
+    font-size: inherit;
+    font-weight: bolder;
+    height: 1.5em;
+    width: 1.5em;
+    margin-left: 5px;
+    -webkit-text-stroke: thick;
+}
+
+.windowtype>dbody {
+    margin-bottom: 10px;
+}
 
 .btnv1 {
     /* btnv1 */
@@ -85,8 +141,6 @@
 .btnv3 {
     /* btnv3 */
     display: inline-flex;
-    /* margin: 10px 5px;
-    padding: 5px; */
     padding: 1px 6px;
     margin: 2px 3px;
     background-color: whitesmoke;
@@ -198,6 +252,8 @@ linebreak {
     width: 50px;
     transition: 10ms ease-in-out;
     border-radius: 10px;
+    ;
+    z-index: 99999;
 }
 
 #lll-smart-menu>img {
@@ -241,7 +297,7 @@ linebreak {
     transition: linear .3s;
 }
 
-.checkbox{
+.checkbox {
     display: inline-block;
     position: relative;
     width: 15px;
@@ -6414,7 +6470,7 @@ oel>li::after {
     font-family: Tahoma;
 }
 
-/* fonts size... */
+/* fonts_size... */
 .fs-large {
     font-size: large;
 }
@@ -6427,8 +6483,12 @@ oel>li::after {
     font-size: x-large;
 }
 
-.fs-xlarge {
+.fs-xxlarge {
     font-size: xx-large;
+}
+
+.fs-xxxlarge {
+    font-size: xxx-large;
 }
 
 .fs-medium {
@@ -6447,8 +6507,12 @@ oel>li::after {
     font-size: x-small;
 }
 
-.fs-xsmall {
+.fs-xxsmall {
     font-size: xx-small;
+}
+
+.fs-xxxsmall {
+    font-size: xxx-small;
 }
 
 /* float */

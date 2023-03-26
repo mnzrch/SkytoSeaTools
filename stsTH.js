@@ -67,6 +67,9 @@ function setClass(cls, ele) {
 function remClass(cls, ele) {
     ele.classList.remove(cls);
 }
+function hasClass(cls, ele) {
+    return ele.classList.contains(cls);
+  }
 function newEle(cnt, e) {
     if (e) {
         let ne = document.createElement(e);

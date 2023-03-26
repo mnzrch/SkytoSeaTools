@@ -14,9 +14,6 @@ const scripts = () => {
     // lll_smart_menu
     const lllsm = id('lll-smart-menu');
     if (lllsm) {
-        // if (getCoki('lll_smart_menu') == 0 && getAttr('remember', lllsm)) {
-        //     setCSS('display', 'none', lllsm);
-        // };
         let mtitle;
         if (getAttr('name', lllsm)) {
             mtitle = getAttr('name', lllsm);
@@ -43,7 +40,7 @@ const scripts = () => {
             setClass('lightboxLG', mmenu);
             setAttr('dfstyle', getAttr('style', lllsm), lllsm);
             $setCSS({
-                'width': 'fit-content', 'maxWidth': '95%', 'height': 'fit-content', 'max-height': '95%', 'left': '50%', 'transform': 'translate(-50%, -50%)', 'top': '50%'
+                'width': 'fit-content', 'max-Width': '95%', 'height': 'fit-content', 'max-height': '95%'
             }, lllsm);
             setCoki('lll_smart_menu', '1', { 'max-age': '31104000' });
         }, hmenu);
@@ -85,9 +82,9 @@ const scripts = () => {
         tag(".lll-item-lister-" + lll_lister_index + ">.header>#close").onclick = function () {
             setCoki('lll_lister', '0', { 'max-age': '31104000' });
             setCSS('display', 'none', ele);
-            let mmdp = tag('#lll-smart-menu > div > dbody');
-            if (mmdp) {
-                mmdp.appendChild(myele);
+            let smca = tag('#lll-smart-menu > div > dbody');
+            if (smca) {
+                smca.appendChild(myele);
             }
         }
         $cls('lll-listed-item').forEach((ele) => {
@@ -108,9 +105,9 @@ const scripts = () => {
         if ($cls('lll-listed-item').length <= 0) {
             ele.remove();
         };
-        let mmdp = tag('#lll-smart-menu > div > dbody');
-        if (mmdp && getCSS('display', ele) == 'none') {
-            mmdp.appendChild(myele);
+        let smca = tag('#lll-smart-menu > div > dbody');
+        if (smca && getCSS('display', ele) == 'none') {
+            smca.appendChild(myele);
         }
         click(function () {
             setCSS('display', 'unset', ele);
@@ -163,6 +160,42 @@ const scripts = () => {
             })
         });
     };
+    //---------------------------------------------------------------------------
+    // windowtype
+    $cls('windowtype').forEach((e) => {
+        let title;
+        if (getAttr('name', e)) {
+            title = getAttr('name', e);
+        } else {
+            title = 'untitled dom* Window!';
+        }
+        let cbtn = newEle('button'); setAttr('class', 'close-button btnv3 htmlcross', cbtn); setAttr('title', 'Click to close!', cbtn);
+        let mbtn = newEle('button'); setAttr('class', 'minimize-button btnv3 htmlmini', mbtn); setAttr('title', 'Click to minimize!', mbtn);
+        let btns = newEle('div'); setClass('buttons', btns); btns.appendChild(mbtn); btns.appendChild(cbtn);
+        let wintitl = newEle(title, 'div'); setAttr('class', 'title drager', wintitl);
+        let winbr = newEle('div'); setClass('window-bar', winbr); winbr.appendChild(wintitl); winbr.appendChild(btns);
+        let dbody = newEle(e.innerHTML, 'dbody'); setAttr('class', 'relative top-7 of-auto dis-block', dbody);
+        html('', e);
+        e.appendChild(winbr); e.appendChild(newEle('linebreak')); e.appendChild(dbody);
+        setCSS('height',(e.clientHeight-(winbr.clientHeight+20))+'px',dbody);
+        click(function () {
+            e.remove();
+        }, cbtn);
+        click(function () {
+            let me = newEle(title, 'windowtype'); setAttr('title', 'Click to view "' + title + '"', me); setAttr('class', 'lightboxWS w-fitcon cursor-pointer margin-5 dis-inlineB', me);
+            let smca = tag('#lll-smart-menu > div > dbody');
+            if (smca) {
+                smca.appendChild(me);
+                setCSS('display', 'none', e);
+                click(function () {
+                    setCSS('display', 'none', me);
+                    setCSS('display', 'block', e);
+                }, me);
+            } else {
+                alert('It will only minimize if lll_Smart_Menu will be enabled!');
+            }
+        }, mbtn);
+    });
     //---------------------------------------------------------------------------
     // Disable context menu.
     if (cls('disableCM') != null) {
@@ -218,27 +251,47 @@ const scripts = () => {
         html('<span style="position: relative;bottom: -1px;">⨉</span>', e);
     });
     //---------------------------------------------------------------------------
+    // Custom htmlmini
+    $cls('htmlmini').forEach((e) => {
+        html('<span style="position: relative;bottom: 0.05em;">–</span>', e);
+    });
+    //---------------------------------------------------------------------------
+    // vp_center
+    $cls('vp-center').forEach((e) => {
+        setCSS('top', (getCSS('top', e).slice(0, -2)) - (e.clientHeight / 2) + 'px', e);
+        setCSS('left', (getCSS('left', e).slice(0, -2)) - (e.clientWidth / 2) + 'px', e);
+        setCSS('transform', 'translate(' + 0 + ',' + 0 + ')', e);
+        setCSS('opacity', '1', e);
+    });
+    //---------------------------------------------------------------------------
     // Custom checkbox
     $cls('checkbox').forEach((e) => {
-        setCSS('cursor', 'pointer', e);if(getAttr('title',e)=='Please wait, Item is being loaded!'){setAttr('title', 'Click to check/uncheck', e)};
+        setCSS('cursor', 'pointer', e); if (getAttr('title', e) == 'Please wait, Item is being loaded!') { setAttr('title', 'Click to check/uncheck', e) };
         if (getAttr('value', e) == 'checked') {
             html('<span style="position: relative;top: -4px;right: -2px;">✓</span>', e)
         };
         click(function () { if (e.innerHTML == '') { html('<span style="position: relative;top: -4px;right: -2px;">✓</span>', e); setAttr('value', '1', e) } else { html('', e); setAttr('value', '0', e) } }, e)
     });
+    // Reactor Scripts
+    let uscript = './uScripts.js'; //path to scripts you want to include
+    let uscriptE = newEle('script'); setAttr('src', uscript, uscriptE);
+    body.appendChild(uscriptE);
     // dragger
     const dragElements = $cls("dragable");
     dragElements.forEach(function (dragElement) {
+        // setCSS('transition', '0s', dragElement);
+        // clog('trans ' + dragElement.offSetX);
+        // setCSS('transform', getCSS('transform', dragElement), dragElement);
         const drager = dragElement.querySelector(".drager");
+        let isDragging = false;
+        let currentX;
+        let currentY;
+        let initialX;
+        let initialY;
+        let xOffset = 0;
+        let yOffset = 0;
         if (drager) {
             setClass('cursor-grab', drager);
-            let isDragging = false;
-            let currentX;
-            let currentY;
-            let initialX;
-            let initialY;
-            let xOffset = 0;
-            let yOffset = 0;
             drager.addEventListener("mousedown", dragStart);
             document.addEventListener("mouseup", dragEnd);
             document.addEventListener("mousemove", drag);
@@ -269,6 +322,5 @@ const scripts = () => {
     });
 };
 // doc_change_detect
-const o = new MutationObserver(m => m.forEach(M => console.log('moded - ' + M) && scripts)); o.observe(document.body, { childList: true, attributes: true, characterData: true });
-window.onload = scripts;
-function ondocmod() { scripts };
+const o = new MutationObserver(m => m.forEach(M => console.log('moded - ' + M) && scripts())); o.observe(document.body, { childList: true, attributes: true, characterData: true });
+window.onload = scripts();
