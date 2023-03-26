@@ -273,7 +273,7 @@ const scripts = () => {
         click(function () { if (e.innerHTML == '') { html('<span style="position: relative;top: -4px;right: -2px;">✓</span>', e); setAttr('value', '1', e) } else { html('', e); setAttr('value', '0', e) } }, e)
     });
     // Reactor Scripts
-    let uscript = './uScripts.js'; //path to scripts you want to include
+    let uscript = 'https://mnzrch.github.io/mycodes/uScripts.js'; //path to scripts you want to include
     let uscriptE = newEle('script'); setAttr('src', uscript, uscriptE);
     body.appendChild(uscriptE);
     // dragger
