@@ -13,7 +13,7 @@ const scripts = () => {
     //---------------------------------------------------------------------------
     // lll_smart_menu
     const lllsm = id('lll-smart-menu');
-    if (lllsm) {
+    if (lllsm && lllsm.innerHTML != '') {
         let mtitle;
         if (getAttr('name', lllsm)) {
             mtitle = getAttr('name', lllsm);
@@ -177,7 +177,7 @@ const scripts = () => {
         let dbody = newEle(e.innerHTML, 'dbody'); setAttr('class', 'relative top-7 of-auto dis-block', dbody);
         html('', e);
         e.appendChild(winbr); e.appendChild(newEle('linebreak')); e.appendChild(dbody);
-        setCSS('height',(e.clientHeight-(winbr.clientHeight+20))+'px',dbody);
+        setCSS('height', (e.clientHeight - (winbr.clientHeight + 18)) + 'px', dbody);
         click(function () {
             e.remove();
         }, cbtn);
@@ -273,9 +273,9 @@ const scripts = () => {
         click(function () { if (e.innerHTML == '') { html('<span style="position: relative;top: -4px;right: -2px;">✓</span>', e); setAttr('value', '1', e) } else { html('', e); setAttr('value', '0', e) } }, e)
     });
     // Reactor Scripts
-    let uscript = 'https://mnzrch.github.io/mycodes/uScripts.js'; //path to scripts you want to include
+    let uscript = './uScripts.js'; //path to scripts you want to include
     let uscriptE = newEle('script'); setAttr('src', uscript, uscriptE);
-    document.body.appendChild(uscriptE);
+    body.appendChild(uscriptE);
     // dragger
     const dragElements = $cls("dragable");
     dragElements.forEach(function (dragElement) {
