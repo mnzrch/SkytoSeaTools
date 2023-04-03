@@ -13,7 +13,7 @@ const scripts = () => {
     //---------------------------------------------------------------------------
     // lll_smart_menu
     const lllsm = id('lll-smart-menu');
-    if (lllsm && lllsm.innerHTML != '') {
+    if (lllsm && lllsm.innerHTML == '') {
         let mtitle;
         if (getAttr('name', lllsm)) {
             mtitle = getAttr('name', lllsm);
