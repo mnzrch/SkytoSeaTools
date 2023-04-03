@@ -1,14 +1,3 @@
-// Scripts...
-function clog(s) {
-    return console.log(s);
-};
-clog('stsTH Loaded successfully!');
-let assestdir;
-if (window.location.protocol == 'file:') {
-    assestdir = 'file:///C:/Users/mnzrc/Desktop/SkytoSeaTools/assests'
-} else {
-    assestdir = 'https://mnzrch.github.io/SkytoSeaTools/assests'
-};
 function $(x) {
     return document.querySelector(x);
 }; const tag = $;
@@ -48,7 +37,7 @@ function input(fun, e) {
     return e.oninput = fun;
 }
 function getCSS(s, e) {
-    return getComputedStyle(e).getPropertyValue(s.replace(/-([a-z])/g, (m, l) => l.toUpperCase()));
+    if (e instanceof Element) { return getComputedStyle(e).getPropertyValue(s.replace(/-([a-z])/g, (m, l) => l.toUpperCase())); }
 }
 function setCSS(prpty, vl, e) {
     var p = prpty.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
@@ -69,7 +58,7 @@ function remClass(cls, ele) {
 }
 function hasClass(cls, ele) {
     return ele.classList.contains(cls);
-  }
+}
 function newEle(cnt, e) {
     if (e) {
         let ne = document.createElement(e);
@@ -138,32 +127,18 @@ async function clipboardpast(ele) {
         ele.value = clpD;
     }
 }
+// get url array(promis) from sitemap (xml)
+async function smtoarray(sitemapUrl) {
+    const response = await fetch(sitemapUrl);
+    const text = await response.text();
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(text, "application/xml");
+    const urls = xml.getElementsByTagName("loc");
+    const urlArray = [];
 
+    for (let i = 0; i < urls.length; i++) {
+        urlArray.push(urls[i].textContent);
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return urlArray;
+}
