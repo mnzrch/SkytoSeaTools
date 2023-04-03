@@ -1,3 +1,6 @@
+function clog(x) {
+    return console.log(x);
+};
 function $(x) {
     return document.querySelector(x);
 }; const tag = $;
