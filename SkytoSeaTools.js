@@ -13,14 +13,14 @@ const scripts = () => {
     //---------------------------------------------------------------------------
     // lll_smart_menu
     const lllsm = id('lll-smart-menu');
-    if (lllsm && lllsm.innerHTML == '') {
+    if (lllsm && lllsm.innerHTML != '') {
         let mtitle;
         if (getAttr('name', lllsm)) {
             mtitle = getAttr('name', lllsm);
         } else {
             mtitle = 'Smart Menu';
         }
-        html('<img title="Double Click to open Smart Menu by Letslearnlights" alt="Menu" src="' + assestdir + '/menu.svg"><div class="main null fd-column"> <header class="dis-flex ai-center"> <mtitle title="' + mtitle + '" class="drager">' + mtitle + '</mtitle> <nav> <div title="Click to Minimize it!" class="btnv3"> <span style="position: relative;font-weight: bold;-webkit-text-stroke: thick;">–</span> </div> <div title="Click to close it!" class="btnv3 htmlcross"></div> </nav> </header> <linebreak></linebreak> <dbody class="relative top-7 of-auto"></dbody> </div>', lllsm);
+        html('<img title="Double Click to open Smart Menu by Letslearnlights" alt="Menu" src="https://mnzrch.github.io/SkytoSeaTools/assests/menu.svg"><div class="main null fd-column"> <header class="dis-flex ai-center"> <mtitle title="' + mtitle + '" class="drager">' + mtitle + '</mtitle> <nav> <div title="Click to Minimize it!" class="btnv3"> <span style="position: relative;font-weight: bold;-webkit-text-stroke: thick;">–</span> </div> <div title="Click to close it!" class="btnv3 htmlcross"></div> </nav> </header> <linebreak></linebreak> <dbody class="relative top-7 of-auto"></dbody> </div>', lllsm);
         clog('lll_smart_menu Enabled');
         // return;
         let hmenu = tag('#lll-smart-menu>img');
